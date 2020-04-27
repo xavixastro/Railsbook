@@ -1,0 +1,17 @@
+Started GET "/" for ::1 at 2020-04-27 12:11:06 -0700
+
+ActiveRecord::NoDatabaseError - FATAL:  database "railsbook_development" does not exist
+:
+
+Started POST "/__better_errors/6860114d9df78d5d/variables" for ::1 at 2020-04-27 12:11:07 -0700
+  [1m[35m (177.8ms)[0m  [1m[35mCREATE DATABASE "railsbook_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (73.1ms)[0m  [1m[35mCREATE DATABASE "railsbook_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-04-27 12:11:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1305ms (Views: 1304.5ms | ActiveRecord: 0.0ms)
+
+
