@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render 'api/users/show'
         else
-            render json: ["Invalid credentials"], status: 401
+            render json: ["Invalid credentials"], status: 401 #Unauthorized Error
         end
     end
 
@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
             logout!
             render json: {}
         else
-            render json: ["Invalid action"], status: 404
+            render json: ["Invalid action"], status: 404 #Unprocessable Entity
         end 
     end
 
