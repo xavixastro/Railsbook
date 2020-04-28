@@ -16,7 +16,7 @@
 class User < ApplicationRecord
 
     validates :email, :password_digest, :session_token, :first_name, :last_name, 
-    :birthdate, :genre, presence: true
+    :birthdate, :gender, presence: true
     validates :email, :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
