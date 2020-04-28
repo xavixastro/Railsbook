@@ -24,6 +24,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
+    # before_save :ensure_profile
 
     def password=(password)
         @password = password
@@ -49,6 +50,10 @@ class User < ApplicationRecord
         return nil unless user
         user.is_password?(password) ? user : nil
     end
+
+
+    # def ensure_profile
+    # end
 
 
 
