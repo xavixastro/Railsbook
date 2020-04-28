@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
     validates :email, :password_digest, :session_token, :first_name, :last_name, 
     :birthdate, :gender, presence: true
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } #Provides a regexp for email validation.
     validates :email, :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
