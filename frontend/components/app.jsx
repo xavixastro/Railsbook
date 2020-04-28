@@ -7,7 +7,6 @@ import SignupFormContainer from './signup_form_container';
 
 const App = () => (
     <div>
-        <h1>Railsbook!!</h1>
         <ProtectedRoute path="/feed" component={FeedContainer}/> 
         <AuthRoute exact path="/" component={LoginFormContainer} />
         <AuthRoute exact path="/" component={SignupFormContainer} />
