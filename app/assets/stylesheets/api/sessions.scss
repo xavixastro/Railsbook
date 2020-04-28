@@ -67,6 +67,20 @@
     list-style-type:none;
 }
 
+.signin-errors {
+    background-color: #BE4B49;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    font-size: 13px;
+    max-width: 200px;
+    padding: 13px;
+    margin: 0 auto;
+    list-style-type:none;
+    position: absolute;
+}
+
 .signup-form button {
     font-size: 15px;
     font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
@@ -89,6 +103,6 @@
 }
 
 .name-input input:last-child{
-    margin: 5px;
+    margin-left: 5px;
 }
 

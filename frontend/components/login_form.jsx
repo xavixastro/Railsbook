@@ -28,9 +28,9 @@ class LoginForm extends React.Component {
         return (
             <div className="login">
                 <h1>railsbook</h1>
-                <ul>
-                    {this.props.errors.map(error => <li>{error}</li>)}
-                </ul>
+
+                {this.props.errors.length > 0 && <ul className="signin-errors"> {this.props.errors.map(error => <li>{error}</li>)} </ul>}
+
                 <form className="login-form" onSubmit={this.handleSubmit}>
 
                     <table>
