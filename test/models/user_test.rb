@@ -9,7 +9,7 @@
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  birthdate       :date             not null
-#  genre           :string           not null
+#  gender          :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

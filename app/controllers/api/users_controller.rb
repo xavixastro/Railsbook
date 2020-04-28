@@ -3,6 +3,13 @@ class Api::UsersController < ApplicationController
     #Sign Up
     def create
         @user = User.new(user_params)
+        
+        # ActiveRecord::Base.transaction do
+        #     @user.save!
+        #     @profile = Profile.new({owner_id: self.id})
+        #     @profile.save!
+        # end
+
         if @user.save
             login!(@user)
             render :show

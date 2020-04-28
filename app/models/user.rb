@@ -9,7 +9,7 @@
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  birthdate       :date             not null
-#  genre           :string           not null
+#  gender          :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -24,7 +24,10 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
-    # before_save :ensure_profile
+
+    has_one :profile,
+        foreign_key: :owner_id,
+        class_name: :Profile
 
     def password=(password)
         @password = password
@@ -52,8 +55,7 @@ class User < ApplicationRecord
     end
 
 
-    # def ensure_profile
-    # end
+
 
 
 
