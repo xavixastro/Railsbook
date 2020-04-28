@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signup } from '../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => ({
-    errors: state.errors.session
+    errors: state.errors.signup
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

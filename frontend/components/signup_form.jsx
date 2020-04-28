@@ -87,21 +87,22 @@ class SignupForm extends React.Component {
                     <label>
                         Birthdate:
                          
-                        <select id="month" onChange={this.handleDate('month')} value={this.state.birthdate.getMonth()}>
-                            <option value="0">January</option>
-                            <option value="1">Febuary</option>
-                            <option value="2">March</option>
-                            <option value="3">April</option>
+                        <select onChange={this.handleDate('month')} value={this.state.birthdate.getMonth()}>
+                            <option>- Month -</option>
+                            <option value="0">Jan</option>
+                            <option value="1">Feb</option>
+                            <option value="2">Mar</option>
+                            <option value="3">Apr</option>
                             <option value="4">May</option>
-                            <option value="5">June</option>
-                            <option value="6">July</option>
-                            <option value="7">August</option>
-                            <option value="8">September</option>
-                            <option value="9">October</option>
-                            <option value="10">November</option>
-                            <option value="11">December</option>
+                            <option value="5">Jun</option>
+                            <option value="6">Jul</option>
+                            <option value="7">Aug</option>
+                            <option value="8">Sep</option>
+                            <option value="9">Oct</option>
+                            <option value="10">Nov</option>
+                            <option value="11">Dec</option>
                         </select>
-                        <select id="day" onChange={this.handleDate('day')} value={this.state.birthdate.getDate()}>
+                        <select onChange={this.handleDate('day')} value={this.state.birthdate.getDate()}>
                             <option>- Day -</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -135,7 +136,8 @@ class SignupForm extends React.Component {
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
-                        <select id="year" onChange={this.handleDate('year')} value={this.state.birthdate.getFullYear()}>
+                        <select onChange={this.handleDate('year')} value={this.state.birthdate.getFullYear()}>
+                            <option>- Year -</option>
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
