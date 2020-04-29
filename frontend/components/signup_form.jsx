@@ -58,9 +58,9 @@ class SignupForm extends React.Component {
 
                     <div className="signup-info">
                         <h2>Connect with friends and the world around you on Railsbook.</h2>
-                        <div><span>See photos and updates</span> from friends in NewsFeed.</div>
-                        <div><span>Share what's new</span> in your life on your Timeline.</div>
-                        <div><span>Find more</span> of what you're looking for with Railsbook Search</div>
+                        <div><img src={window.signup1URL}></img><span>See photos and updates</span>from friends in NewsFeed.</div>
+                        <div><img src={window.signup2URL}></img><span>Share what's new</span>in your life on your Timeline.</div>
+                        <div><img src={window.signup3URL}></img><span>Find more</span>of what you're looking for with Railsbook Search</div>
                     </div>
 
                     <form className="signup-form" onSubmit={this.handleSubmit}>
@@ -78,15 +78,19 @@ class SignupForm extends React.Component {
                                 </td>
                             </tr>
                             <tr>
-                                <td><input onChange={this.handleChange("email")} placeholder="Email" type="text" value={this.state.email} /></td>
+                                <td className="email-input">
+                                    <input onChange={this.handleChange("email")} placeholder="Email" type="text" value={this.state.email} />
+                                </td>
                             </tr>
                             <tr>
-                                <td><input onChange={this.handleChange("password")} placeholder="New password" type="password" value={this.state.password} /></td>
+                                <td className="password-input">
+                                    <input onChange={this.handleChange("password")} placeholder="New password" type="password" value={this.state.password} />
+                                </td>
                             </tr>
                             <tr>
                                 <td><h3>Birthday</h3></td>
                             </tr>
-                            <tr>
+                            <tr className="signup-birthdate">
                                 <td>
                                     <select onChange={this.handleDate('month')} value={this.state.birthdate.getMonth()}>
                                         <option>- Month -</option>
@@ -250,9 +254,9 @@ class SignupForm extends React.Component {
                             </tr>
                         </table>
                         <button>Sign Up</button>            
+                        {this.props.errors.length > 0 && <ul className="signup-errors"> {this.props.errors.map(error => <li>{error}</li>)} </ul>}
                     </form>
 
-                    {this.props.errors.length > 0 && <ul className="signup-errors"> {this.props.errors.map(error => <li>{error}</li>)} </ul>}
 
                 </div>
             </div>

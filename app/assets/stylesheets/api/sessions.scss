@@ -54,7 +54,7 @@
 .signup-container {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    // align-items: center;
     width: 1000px;
     margin: 0 auto;
 }
@@ -75,12 +75,10 @@
 .signup-info div {
     margin-top: 14px;
     padding-bottom: 10px;
-    line-height: 1.34;
     font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
-    line-height: 22px;
-    margin-right: 2px;
     color: #666;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-size: 15px;
     line-height: 20px;
 }
@@ -89,6 +87,8 @@
     color: #333;
     font-size: 17px;
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 .signup-errors {
@@ -102,9 +102,11 @@
     padding: 13px;
     margin: 0 auto;
     list-style-type:none;
-    position: absolute;
-    right: 150px;
-    bottom: 350px;
+    position: relative;
+    left: 25px;
+    top: 25px;
+    // bottom: 350px;
+    float: right;
 }
 
 .signin-errors {
@@ -144,6 +146,14 @@
 
 .name-input input:last-child{
     margin-left: 5px;
+}
+
+.email-input input{
+    width: 95%;
+}
+
+.password-input input{
+    width: 95%;
 }
 
 .signup-form h1 {
@@ -204,5 +214,16 @@
     display: inline-block;
     padding: 5px 0 5px 4px;
     margin-right: 5px;
+}
+
+.signup-birthdate select {
+    font-size: 13px;
+    height: 30px;
+    padding: 5px;
+    background-color: #fff;
+    color: #1c1e21;
+    border: 1px solid #ccd0d5;
+    text-align: start;
+    align-items: center;
 }
 
