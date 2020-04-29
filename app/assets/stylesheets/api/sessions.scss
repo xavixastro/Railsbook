@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Login Bar
 
 .login {
     display: flex;
@@ -42,6 +43,8 @@
     text-align: center;
 }
 
+//Signup Form
+
 .signup {
     display: block;
     background-color: #EDF0F5;
@@ -56,7 +59,35 @@
 }
 
 .signup-info {
-    width: 400px;
+    width: 500px;
+}
+
+.signup-info h2 {
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    letter-spacing: normal;
+    line-height: 36px;
+    padding: 42px 0 24px;
+    width: 456px;
+}
+
+.signup-info div {
+    margin-top: 14px;
+    padding-bottom: 10px;
+    line-height: 1.34;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+    line-height: 22px;
+    margin-right: 2px;
+    color: #666;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.signup-info div span {
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .signup-errors {
@@ -70,6 +101,9 @@
     padding: 13px;
     margin: 0 auto;
     list-style-type:none;
+    position: absolute;
+    right: 150px;
+    bottom: 350px;
 }
 
 .signin-errors {
@@ -87,10 +121,9 @@
 }
 
 .signup-form button {
-    font-size: 15px;
+    font-size: 19px;
     font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
     letter-spacing: normal;
-    text-rendering: optimizelegibility;
     background: linear-gradient(#67ae55, #578843);
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
@@ -99,15 +132,76 @@
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
     min-width: 194px;
     padding: 7px 20px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+
+
 }
 
 .name-input input:last-child{
     margin-left: 5px;
+}
+
+.signup-form h1 {
+    color: #333;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.signup-form h2 {
+    color: #333;
+    font-family: 'Freight Sans', Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.26;
+    margin-bottom: 20px;
+    font-weight: lighter;
+
+}
+
+.signup-form h3 {
+    color: #90949c;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: block;
+}
+
+.signup-form input {
+    font-size: 18px;
+    padding: 8px 10px;
+    border-color: #bdc7d8;
+    border-radius: 5px;
+    margin: 0;
+    border: 1px solid #ccd0d5;
+}
+
+.signup-gender span {
+    // font-family: inherit;
+    // position: relative;
+    // margin-top: 10px;
+    
+    color: #1d2129;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 0 10px 0 3px;
+    margin-right: 10px;
+
+
+}
+
+.signup-gender input {
+    border-radius: 4px;
+    border-width: 1px;
+    display: inline-block;
+    padding: 5px 0 5px 4px;
+    margin-right: 5px;
 }
 

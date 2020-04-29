@@ -55,11 +55,12 @@ class SignupForm extends React.Component {
         return (
             <div className="signup" >
                 <div className="signup-container">
+
                     <div className="signup-info">
                         <h2>Connect with friends and the world around you on Railsbook.</h2>
-                        <div>See photos and updates from friends in NewsFeed.</div>
-                        <div>Share what's new in your life on your Timeline.</div>
-                        <div>Find more of what you're looking for with Railsbook Search</div>
+                        <div><span>See photos and updates</span> from friends in NewsFeed.</div>
+                        <div><span>Share what's new</span> in your life on your Timeline.</div>
+                        <div><span>Find more</span> of what you're looking for with Railsbook Search</div>
                     </div>
 
                     <form className="signup-form" onSubmit={this.handleSubmit}>
@@ -68,7 +69,7 @@ class SignupForm extends React.Component {
                                 <td><h1>Sign Up</h1></td>
                             </tr>
                             <tr>
-                                <td><h3>It's quick and easy.</h3></td>
+                                <td><h2>It's quick and easy.</h2></td>
                             </tr>
                             <tr>
                                 <td className="name-input">
@@ -83,7 +84,7 @@ class SignupForm extends React.Component {
                                 <td><input onChange={this.handleChange("password")} placeholder="New password" type="password" value={this.state.password} /></td>
                             </tr>
                             <tr>
-                                <td>Birthday</td>
+                                <td><h3>Birthday</h3></td>
                             </tr>
                             <tr>
                                 <td>
@@ -238,13 +239,13 @@ class SignupForm extends React.Component {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Gender</td>
+                                <td><h3>Gender</h3></td>
                             </tr>
-                            <tr>
+                            <tr className="signup-gender">
                                 <td>
-                                    <input onChange={this.handleChange("gender")} type="radio" id="female" name="gender" value="female" />Female
-                                    <input onChange={this.handleChange("gender")} type="radio" id="male" name="gender" value="male" />Male
-                                    <input onChange={this.handleChange("gender")} type="radio" id="other" name="gender" value="custom" />Custom
+                                    <span><input onChange={this.handleChange("gender")} type="radio" id="female" name="gender" value="female"/>Female</span>
+                                    <span><input onChange={this.handleChange("gender")} type="radio" id="male" name="gender" value="male"/>Male</span>
+                                    <span><input onChange={this.handleChange("gender")} type="radio" id="other" name="gender" value="custom"/>Custom</span>
                                 </td>    
                             </tr>
                         </table>

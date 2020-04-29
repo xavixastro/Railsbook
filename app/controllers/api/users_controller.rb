@@ -4,13 +4,8 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         
-        # ActiveRecord::Base.transaction do
-        #     @user.save!
-        #     @profile = Profile.new({owner_id: self.id})
-        #     @profile.save!
-        # end
-
         if @user.save
+            @profile = Profile.create({owner_id: @user.id}) 
             login!(@user)
             render :show
         else
