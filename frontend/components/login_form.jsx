@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -33,7 +34,19 @@ class LoginForm extends React.Component {
         // debugger
         return (
             <div className="login">
-                <h1>railsbook</h1>
+                
+                <h1>
+                    <NavLink 
+                        to="/"
+                        activeStyle= {{
+                            textDecoration: 'none', 
+                            color: 'white'
+                        }}> 
+                        railsbook 
+                    </NavLink>
+                </h1>
+
+
 
 
                 <form className="login-form" onSubmit={this.handleSubmit}>
