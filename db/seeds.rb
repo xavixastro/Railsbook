@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-users = User.create([{ email: 'javi@aa.io', password: '123456', first_name: 'Javier', last_name: 'Castro', birthdate: '2000-04-04', gender: 'male'},
+users = User.create([{ email: 'demo@aa.io', password: '123456', first_name: 'Demo', last_name: 'Demo', birthdate: '2015-10-10', gender: 'male'},
+{ email: 'javi@aa.io', password: '123456', first_name: 'Javier', last_name: 'Castro', birthdate: '2000-04-04', gender: 'male'},
 { email: 'pamela@aa.io', password: '123456', first_name: 'Pamela', last_name: 'Castro', birthdate: '2010-06-06', gender: 'female'}])
 
-profiles = Profile.create([{owner_id: users[0].id}, {owner_id: users[1].id} ])
+profiles = Profile.create([{owner_id: users[0].id}, {owner_id: users[1].id}, {owner_id: users[2].id} ])
