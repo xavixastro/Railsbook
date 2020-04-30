@@ -1,3 +1,28 @@
 // Place all the styles related to the api/profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4267B2;
+    height: 40px;
+}
+
+.navbar img {
+    height: 30px;
+    width: 35px;
+}
+
+.navbar-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-avatar img {
+    border-radius: 50%;
+    height: 30px;
+    width: 35px;
+}
+

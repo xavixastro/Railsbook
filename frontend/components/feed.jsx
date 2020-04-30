@@ -6,17 +6,13 @@ class Feed extends React.Component {
 
     constructor(props) {
         super(props);
-        this.logout = this.logout.bind(this)
     }
 
-    componentDidMount(){
-        // debugger
-        this.props.fetchUser(this.props.currentUser.id)
-    }
+    // componentDidMount(){
+    //     // debugger
+    //     this.props.fetchUser(this.props.currentUser.id)
+    // }
 
-    logout() {
-        this.props.logout();
-    }
 
     render() {
         if (this.props.currentUser === undefined) {
@@ -29,7 +25,6 @@ class Feed extends React.Component {
             return (
                 <div>
                     <h3>Welcome {this.props.currentUser.email}</h3>
-                    <button onClick={this.logout}>Log Out</button>
                 </div>
             )
         }

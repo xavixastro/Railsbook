@@ -19,7 +19,6 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
-        // this.setState ({username: "", password: ""}) //clear fields
     }
 
     handleChange(field) {
