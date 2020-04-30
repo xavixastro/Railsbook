@@ -9,6 +9,11 @@ class Feed extends React.Component {
         this.logout = this.logout.bind(this)
     }
 
+    componentDidMount(){
+        // debugger
+        this.props.fetchUser(this.props.currentUser.id)
+    }
+
     logout() {
         this.props.logout();
     }

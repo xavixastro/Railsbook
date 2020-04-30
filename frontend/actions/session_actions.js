@@ -7,10 +7,10 @@ export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS'
 
 
 
-const receiveCurrentUser = (currentUser) => (
+const receiveCurrentUser = (payload) => (
     {
         type: RECEIVE_CURRENT_USER,
-        currentUser 
+        payload 
     }
 )
 
@@ -44,18 +44,24 @@ const receiveSignupErrors = (errors) => {
 
 export const login = (user) => dispatch => {
     return APIUtil.login(user)
-        .then(user => dispatch(receiveCurrentUser(user)),
+        .then(payload => dispatch(receiveCurrentUser(payload)),
             err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
 export const signup = (user) => dispatch => {
     return APIUtil.signup(user)
-        .then(user => dispatch(receiveCurrentUser(user)),
+        .then(payload => dispatch(receiveCurrentUser(payload)),
             err => dispatch(receiveSignupErrors(err.responseJSON)))
 }
 
 export const logout = () => dispatch => {
     return APIUtil.logout()
         .then(() => dispatch(logoutCurrentUser()),
+            err => dispatch(receiveSessionErrors(err.responseJSON)))
+}
+
+export const fetchUser = (userId) => dispatch => {
+    return APIUtil.fetchUser(userId)
+        .then(payload => dispatch(receiveCurrentUser(payload)),
             err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
