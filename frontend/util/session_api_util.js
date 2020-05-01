@@ -27,3 +27,10 @@ export const fetchUser = (userId) => {
         method: 'GET'
     })
 }
+
+export const fetchProfile = (userId) => {
+    return $.ajax({
+        url: `/api/users/${userId}`,
+        method: 'GET'
+    })
+}

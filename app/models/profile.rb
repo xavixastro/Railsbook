@@ -20,5 +20,6 @@ class Profile < ApplicationRecord
         foreign_key: :owner_id, 
         class_name: :User
 
+    has_one_attached :profile_photo
     
 end

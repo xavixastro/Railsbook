@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS'
+export const RECEIVE_PROFILE = 'RECEIVE_PROFILE'
 
 
 
@@ -17,6 +18,13 @@ const receiveCurrentUser = (payload) => (
 const logoutCurrentUser = () => (
     {
         type: LOGOUT_CURRENT_USER,
+    }
+)
+
+const receiveProfile = (payload) => (
+    {
+        type: RECEIVE_PROFILE,
+        payload
     }
 )
 
@@ -40,6 +48,8 @@ const receiveSignupErrors = (errors) => {
 
 
 
+
+
 //thunk action creators
 
 export const login = (user) => dispatch => {
@@ -60,8 +70,16 @@ export const logout = () => dispatch => {
             err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
+//session reducer will care for this
 export const fetchUser = (userId) => dispatch => {
     return APIUtil.fetchUser(userId)
         .then(payload => dispatch(receiveCurrentUser(payload)),
+            err => dispatch(receiveSessionErrors(err.responseJSON)))
+}
+
+//session reducer will ignore this
+export const fetchProfile = (userId) => dispatch => {
+    return APIUtil.fetchProfile(userId)
+        .then(payload => dispatch(receiveProfile(payload)),
             err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
