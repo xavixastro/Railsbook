@@ -19,13 +19,29 @@
 
 .navbar-avatar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    min-width: 80px;
+    text-decoration: 'none';
+    color: 'white';
+    padding: 2px 6px;
+}
+
+.navbar-avatar:hover {
+    background-color: #3C5CA2
 }
 
 .navbar-avatar img {
     border-radius: 50%;
     height: 30px;
     width: 35px;
+}
+
+.navbar-avatar span {
+    font-size: 14px;
+    text-decoration: 'none';
+    color: 'white';
+    font-weight: bold;
 }
 
 .profile-main {

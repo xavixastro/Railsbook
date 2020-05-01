@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+
 
 class NavBar extends React.Component {
 
@@ -26,17 +28,40 @@ class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <div>
-                    <img src={window.navLogoURL}></img>
+                    <NavLink
+                        to={`/feed`}
+                        activeStyle={{
+                            textDecoration: 'none',
+                            color: 'white'
+                        }}>
+                        <img src={window.navLogoURL} />
+                    </NavLink>
                 </div>
                 <div>
                     <input type="text" placeholder="Search.."></input>
                     <button type="submit"><i>🔍</i></button>
                 </div>
-                <div className="navbar-avatar">
-                    <img src={window.avatarURL} />
-                    <span>{currentUser.first_name}</span>
+                <div >
+                    <NavLink className="navbar-avatar"
+                        to={`/users/${currentUser.id}`}
+                        activeStyle={{
+                            textDecoration: 'none',
+                            color: 'white'
+                        }}>
+                        <img src={window.avatarURL} />
+                        <span>{currentUser.first_name}</span>
+                    </NavLink>
                 </div>
-                <div>Home</div>
+                <div>
+                    <NavLink
+                        to={`/feed`}
+                        activeStyle={{
+                            textDecoration: 'none',
+                            color: 'white'
+                        }}>
+                        Home
+                    </NavLink>
+                </div>
                 <div>
                     <img src={window.navRequestsURL} />
                 </div>
