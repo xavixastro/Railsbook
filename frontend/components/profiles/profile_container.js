@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { fetchProfile } from '../../actions/session_actions'
+import { fetchProfile } from '../../actions/session_actions';
+import { updateProfilePhoto } from '../../actions/profile_actions';
+
 
 const mapStateToProps = (state) => {
-
-    // debugger
 
     return ({
         users: state.entities.users,
@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        fetchProfile: (userId) => dispatch(fetchProfile(userId))
+        fetchProfile: (userId) => dispatch(fetchProfile(userId)),
+        updateProfilePhoto: (profile) => dispatch(updateProfilePhoto(profile))
     });
 };
 

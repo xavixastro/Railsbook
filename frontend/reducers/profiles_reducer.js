@@ -1,4 +1,5 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE } from '../actions/session_actions'
+import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE } from '../actions/session_actions';
+import { RECEIVE_PROFILE_PHOTO } from '../actions/profile_actions';
 
 const profilesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,6 +11,8 @@ const profilesReducer = (state = {}, action) => {
         case RECEIVE_PROFILE:
             nextState[action.payload.profile.id] = action.payload.profile;
             return nextState;
+        case RECEIVE_PROFILE_PHOTO:
+            nextState[action.profile.id] = action.profile;
         default:
             return state;
     }
