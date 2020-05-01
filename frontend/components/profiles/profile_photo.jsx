@@ -28,7 +28,7 @@ class ProfilePhoto extends React.Component {
         console.log(this.state)
         // debugger
         return (
-            <div>
+            <div className="profile-photo">
                 <img src={this.props.profile.profilePhotoUrl} />
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="file" onChange={this.handleFile.bind(this)}/>
