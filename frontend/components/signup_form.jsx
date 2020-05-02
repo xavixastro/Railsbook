@@ -31,7 +31,6 @@ class SignupForm extends React.Component {
         
         return (e) => {
             const newDate = this.state.birthdate;
-            // debugger
             switch (field) {
                 case 'month':
                     newDate.setMonth(e.target.value);
@@ -50,7 +49,6 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <div className="signup" >
                 <div className="signup-container">

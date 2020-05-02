@@ -9,7 +9,6 @@ class Api::ProfilesController < ApplicationController
     end
 
     def update
-        # debugger
         @profile = Profile.find(params[:id])
         if @profile.update(profile_params)
             render :show

@@ -8,12 +8,6 @@ class Feed extends React.Component {
         super(props);
     }
 
-    // componentDidMount(){
-    //     // debugger
-    //     this.props.fetchUser(this.props.currentUser.id)
-    // }
-
-
     render() {
         if (this.props.currentUser === undefined) {
             return (

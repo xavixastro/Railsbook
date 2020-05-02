@@ -20,13 +20,10 @@ class ProfilePhoto extends React.Component {
         const formData = new FormData();
         formData.append('profile[id]', this.props.profile.id);
         formData.append('profile[profile_photo]', this.state.photoFile);
-        debugger
         this.props.updateProfilePhoto(formData)
     }
 
     render(){
-        console.log(this.state)
-        // debugger
         return (
             <div className="profile-photo">
                 <img src={this.props.profile.profilePhotoUrl} />
