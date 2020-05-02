@@ -21,5 +21,11 @@ class Profile < ApplicationRecord
         class_name: :User
 
     has_one_attached :profile_photo
+
+    before_create :set_default_image
+
+    def set_default_image 
+        self.profile_photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'default-avatar.png', content_type: 'image/png')
+    end
     
 end
