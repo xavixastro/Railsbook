@@ -30,7 +30,7 @@ class NavBar extends React.Component {
                 <div>
                     <NavLink
                         to={`/feed`}
-                        activeStyle={{
+                        style={{
                             textDecoration: 'none',
                             color: 'white'
                         }}>
@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                 <div >
                     <NavLink className="navbar-avatar"
                         to={`/users/${currentUser.id}`}
-                        activeStyle={{
+                        style={{
                             textDecoration: 'none',
                             color: 'white'
                         }}>
@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                 <div>
                     <NavLink
                         to={`/feed`}
-                        activeStyle={{
+                        style={{
                             textDecoration: 'none',
                             color: 'white'
                         }}>
