@@ -8,9 +8,9 @@ import FriendsIndexContainer from '../friends/friends_index_container';
 class Profile extends React.Component {
 
     componentDidMount(){
-        this.props.fetchProfile(this.props.match.params.id);
         this.props.fetchFriendships();
         this.props.fetchRequests();
+        this.props.fetchUsers();
     }
 
     componentDidUpdate(prevProps) {
@@ -25,10 +25,12 @@ class Profile extends React.Component {
 
     render(){
 
+        // debugger
 
         if (this.props.profiles[this.props.match.params.id] === undefined) return null;
 
         const {currentUser} = this.props
+
 
         return ( 
             <div className="profile-main">
