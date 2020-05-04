@@ -1,3 +1,66 @@
 // Place all the styles related to the api/friendships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.friend-container {
+    width: 103px;
+    height: 144px;
+    text-align: center;
+    padding: 5px;
+}
+
+.friend-container img {
+    width: inherit;
+    height: 103px;
+    object-fit: cover;
+    display: inline-flex;
+}
+
+.friend-link {
+    text-decoration: none;
+    color: #385898;
+}
+
+.friend-link:hover {
+    text-decoration: underline;
+}
+
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.friends-label {
+    width: 150px;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.friends-label img {
+    width: 30px;
+    height: 30px;
+}
+
+.friends-label h3 {
+    font-size: 18px;
+    color: #1d2129;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    
+}
+
+.friends-label h4 {
+    font-size: 14px;
+    color: #90949c;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+
+}
