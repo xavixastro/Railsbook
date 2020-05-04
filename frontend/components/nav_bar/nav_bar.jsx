@@ -12,7 +12,8 @@ class NavBar extends React.Component {
 
     componentDidMount(){
         if (this.props.currentUser === undefined) return null;
-        this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchUser(this.props.currentUser.id);
+        this.props.fetchUsers();
     }
 
 
@@ -22,8 +23,12 @@ class NavBar extends React.Component {
 
     render(){
         if (this.props.currentUser === undefined) return null;
+        if (this.props.profile === undefined) return null;
+
+        // debugger
 
         const {currentUser} = this.props
+
 
         return (
             <div className="navbar">
@@ -48,7 +53,7 @@ class NavBar extends React.Component {
                             textDecoration: 'none',
                             color: 'white'
                         }}>
-                        <img src={window.avatarURL} />
+                        <img src={this.props.profile.profilePhotoUrl } />
                         <span>{currentUser.first_name}</span>
                     </NavLink>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import ProfilePhoto from './profile_photo';
 import ProfileCover from './profile_cover';
 import RequestButtonContainer from './request_button_container';
+import FriendsIndexContainer from '../friends/friends_index_container';
 
 
 class Profile extends React.Component {
@@ -44,7 +45,7 @@ class Profile extends React.Component {
                             <p>PROFILE INFO HERE</p>
                         </div>
                         <div className="profile-friends">
-                            <p>FRIENDS LIST HERE</p>
+                            <FriendsIndexContainer/>
                         </div>
                     </div>
 

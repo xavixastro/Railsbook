@@ -5,6 +5,7 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS'
 export const RECEIVE_PROFILE = 'RECEIVE_PROFILE'
+export const RECEIVE_USERS = 'RECEIVE_USERS'
 
 
 
@@ -24,6 +25,13 @@ const logoutCurrentUser = () => (
 const receiveProfile = (payload) => (
     {
         type: RECEIVE_PROFILE,
+        payload
+    }
+)
+
+const receiveUsers = (payload) => (
+    {
+        type: RECEIVE_USERS,
         payload
     }
 )
@@ -82,4 +90,9 @@ export const fetchProfile = (userId) => dispatch => {
     return APIUtil.fetchProfile(userId)
         .then(payload => dispatch(receiveProfile(payload)),
             err => dispatch(receiveSessionErrors(err.responseJSON)))
+}
+
+export const fetchUsers = () => dispatch => {
+    return APIUtil.fetchUsers()
+        .then(payload => dispatch(receiveUsers(payload)))
 }

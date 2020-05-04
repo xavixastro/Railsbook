@@ -1,3 +1,10 @@
+export const fetchProfiles = () => {
+    return $.ajax({
+        url: '/api/profiles',
+        method: 'GET'
+    })
+}
+
 export const updateProfilePhoto = (profile) => {
 
     return $.ajax({

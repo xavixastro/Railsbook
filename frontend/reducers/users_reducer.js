@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE } from '../actions/session_actions'
+import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE, RECEIVE_USERS} from '../actions/session_actions'
 import { RECEIVE_REQUEST, RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, REMOVE_REQUEST } from "../actions/request_actions";
 
 
@@ -6,6 +6,8 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
     switch (action.type) {
+        case RECEIVE_USERS:
+            return action.payload.users
         case RECEIVE_CURRENT_USER:
             nextState[action.payload.user.id] = action.payload.user;
             return nextState;

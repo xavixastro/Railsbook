@@ -1,5 +1,10 @@
 class Api::ProfilesController < ApplicationController
 
+    def index
+        @profiles = Profile.all
+        render :index
+    end
+
     def create
         @profile = Profile.new(profile_params)
         @profile.save

@@ -34,7 +34,8 @@
 .navbar-avatar img {
     border-radius: 50%;
     height: 30px;
-    width: 35px;
+    width: 30px;
+    object-fit: cover;
 }
 
 .navbar-avatar span {
