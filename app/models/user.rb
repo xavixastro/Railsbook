@@ -29,6 +29,30 @@ class User < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :Profile
 
+    has_many :friendships, 
+        foreign_key: :userA, 
+        class_name: :Friendship
+
+    has_many :friends, 
+        through: :friendships, 
+        source: :friend
+
+    has_many :received_requests,
+        foreign_key: :user_id,
+        class_name: :Request
+
+    has_many :received_friends, 
+        through: :received_requests,
+        source: :requester
+
+    has_many :sent_requests,
+        foreign_key: :requester_id,
+        class_name: :Request
+
+    has_many :sent_friends, 
+        through: :sent_requests,
+        source: :user
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

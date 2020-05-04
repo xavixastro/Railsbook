@@ -1,13 +1,14 @@
 import React from 'react';
 import ProfilePhoto from './profile_photo';
 import ProfileCover from './profile_cover';
-import { updateProfilePhoto } from '../../util/profile_api_util';
+import RequestButtonContainer from './request_button_container';
 
 
 class Profile extends React.Component {
 
     componentDidMount(){
         this.props.fetchProfile(this.props.match.params.id);
+        this.props.fetchFriendships();
     }
 
     componentDidUpdate(prevProps) {
@@ -16,10 +17,16 @@ class Profile extends React.Component {
         }
     }
 
+    rerenderParentCallback() {
+        this.forceUpdate();
+    }
+
     render(){
 
 
         if (this.props.profiles[this.props.match.params.id] === undefined) return null;
+
+        const {currentUser} = this.props
 
         return ( 
             <div className="profile-main">
@@ -27,7 +34,8 @@ class Profile extends React.Component {
                     <div className="profile-top">
                         <ProfileCover />
                         <h1>{this.props.users[this.props.match.params.id].first_name} {this.props.users[this.props.match.params.id].last_name}</h1>
-                        <ProfilePhoto profile={this.props.profiles[this.props.match.params.id]} updateProfilePhoto={this.props.updateProfilePhoto} />
+                        <ProfilePhoto profile={this.props.profiles[this.props.match.params.id]} updateProfilePhoto={this.props.updateProfilePhoto} currentUser={currentUser} />
+                        {(currentUser.id !== this.props.users[this.props.match.params.id].id) ? <RequestButtonContainer rerenderParentCallback={this.rerenderParentCallback.bind(this)}/> : ""}
                     </div>
 
                     <div className="profile-left">

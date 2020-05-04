@@ -24,13 +24,21 @@ class ProfilePhoto extends React.Component {
     }
 
     render(){
+
+        let saveOption;
+
+        if (this.props.currentUser.id === this.props.profile.id){
+            saveOption = (  <form onSubmit={this.handleSubmit.bind(this)}>
+                                <input type="file" onChange={this.handleFile.bind(this)} />
+                                <button>Save Image</button>
+                            </form> )
+        } else {
+            saveOption = ""
+        }
         return (
             <div className="profile-photo">
                 <img src={this.props.profile.profilePhotoUrl} />
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input type="file" onChange={this.handleFile.bind(this)}/>
-                    <button>Save Image</button>
-                </form>
+                {saveOption}
             </div>
         )
     }

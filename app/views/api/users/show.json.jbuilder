@@ -1,6 +1,6 @@
 
 json.user do 
-    json.extract! @user, :id, :email, :first_name, :last_name, :birthdate
+    json.extract! @user, :id, :email, :first_name, :last_name, :birthdate, :friend_ids, :received_friend_ids, :sent_friend_ids
     json.profile_id @user.profile.id
 end
 

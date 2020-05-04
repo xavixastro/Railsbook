@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE } from '../actions/session_actions';
 import { RECEIVE_PROFILE_PHOTO } from '../actions/profile_actions';
 
+
 const profilesReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
