@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE } from '../actions/session_actions'
-import { RECEIVE_REQUEST, RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from "../actions/request_actions";
+import { RECEIVE_REQUEST, RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, REMOVE_REQUEST } from "../actions/request_actions";
 
 
 const usersReducer = (state = {}, action) => {
@@ -26,6 +26,9 @@ const usersReducer = (state = {}, action) => {
         case REMOVE_FRIENDSHIP:
             nextState[action.friendship.userA].friend_ids = nextState[action.friendship.userA].friend_ids.filter(item => item !== action.friendship.userB);
             return nextState;
+        case REMOVE_REQUEST:
+            nextState[action.request.user_id].received_friend_ids = nextState[action.request.user_id].received_friend_ids.filter(item => item !== action.request.requester_id)
+            nextState[action.request.requester_id].sent_friend_ids = nextState[action.request.requester_id].sent_friend_ids.filter(item => item !== action.request.user_id)
         default:
             return state;
     }

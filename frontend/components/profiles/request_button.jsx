@@ -11,6 +11,7 @@ class RequestButton extends React.Component {
         this.send_request = this.send_request.bind(this);
         this.accept_request = this.accept_request.bind(this);
         this.remove_friend = this.remove_friend.bind(this);
+        this.cancel_request = this.cancel_request.bind(this);
 
     }
 
@@ -34,6 +35,13 @@ class RequestButton extends React.Component {
         this.props.rerenderParentCallback()
     }
 
+    cancel_request() {
+        // debugger
+        let request = this.props.requests.filter(item => item.requester_id === this.props.currentUser.id && item.user_id === this.props.profileUser.id)[0]
+        this.props.deleteRequest(request.id)
+        this.props.rerenderParentCallback()
+    }
+
     render(){
 
         const {currentUser, profileUser} = this.props
@@ -45,10 +53,10 @@ class RequestButton extends React.Component {
             button = <button onClick={this.remove_friend}>Remove Friend</button>
         //Friend request pending to be accepted by current user
         } else if (currentUser.received_friend_ids.includes(profileUser.id)) {
-            button = <button onClick={this.accept_request}>Accept</button>
+            button = <button onClick={this.accept_request}>Accept Request</button>
         //Friend request pending to be accepted by profile user
         } else if (currentUser.sent_friend_ids.includes(profileUser.id)) {
-            button = <button>Requested</button>
+            button = <button onClick={this.cancel_request}>Requested</button>
         //Not friends
         } else {
             button = <button onClick={this.send_request}>Add Friend</button>

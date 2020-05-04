@@ -1,9 +1,11 @@
-import { RECEIVE_REQUEST, REMOVE_REQUEST } from "../actions/request_actions";
+import { RECEIVE_REQUEST, REMOVE_REQUEST, RECEIVE_REQUESTS } from "../actions/request_actions";
 
 const RequestsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state)
     switch (action.type) {
+        case RECEIVE_REQUESTS:
+            return action.requests
         case RECEIVE_REQUEST:
             nextState[action.request.id] = action.request;
             return nextState;

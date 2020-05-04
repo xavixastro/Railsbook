@@ -1,5 +1,10 @@
 class Api::RequestsController < ApplicationController
 
+    def index
+        @requests = Request.all
+        render :index
+    end
+
     def create
         @request = Request.new(request_params) 
         if @request.save 
@@ -11,8 +16,8 @@ class Api::RequestsController < ApplicationController
 
     def destroy
         @request = Request.find(params[:id])
-        if request.destroy
-            render json: {}
+        if @request.destroy
+            render json: @request
         else
             render json: ["Unable to delete friend request"], status: 422
         end 

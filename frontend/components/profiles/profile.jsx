@@ -9,6 +9,7 @@ class Profile extends React.Component {
     componentDidMount(){
         this.props.fetchProfile(this.props.match.params.id);
         this.props.fetchFriendships();
+        this.props.fetchRequests();
     }
 
     componentDidUpdate(prevProps) {

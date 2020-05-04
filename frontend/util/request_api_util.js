@@ -38,3 +38,11 @@ export const fetchFriendships = () => {
         method: 'GET'
     })
 }
+
+export const fetchRequests = () => {
+
+    return $.ajax({
+        url: '/api/requests',
+        method: 'GET'
+    })
+}

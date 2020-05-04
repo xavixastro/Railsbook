@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchProfile } from '../../actions/session_actions';
 import { updateProfilePhoto } from '../../actions/profile_actions';
-import { fetchFriendships } from '../../actions/request_actions';
+import { fetchFriendships, fetchRequests } from '../../actions/request_actions';
 
 
 const mapStateToProps = (state) => {
@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchProfile: (userId) => dispatch(fetchProfile(userId)),
         fetchFriendships: () => dispatch(fetchFriendships()),
+        fetchRequests: () => dispatch(fetchRequests()),
         updateProfilePhoto: (profile) => dispatch(updateProfilePhoto(profile))
     });
 };

@@ -1,4 +1,5 @@
 export const RECEIVE_REQUEST = "RECEIVE_REQUEST";
+export const RECEIVE_REQUESTS = "RECEIVE_REQUESTS";
 export const REMOVE_REQUEST = "REMOVE_REQUEST";
 export const RECEIVE_FRIENDSHIP = "RECEIVE_FRIENDSHIP";
 export const RECEIVE_FRIENDSHIPS = "RECEIVE_FRIENDSHIPS";
@@ -14,10 +15,10 @@ const receiveRequest = (request) => {
 }
 
 
-const removeRequest = (requestId) => {
+const removeRequest = (request) => {
     return {
         type: REMOVE_REQUEST,
-        requestId
+        request
     }
 }
 
@@ -32,6 +33,13 @@ const receiveFriendships = (friendships) => {
     return {
         type: RECEIVE_FRIENDSHIPS,
         friendships
+    }
+}
+
+const receiveRequests = (requests) => {
+    return {
+        type: RECEIVE_REQUESTS,
+        requests
     }
 }
 
@@ -52,7 +60,7 @@ export const createRequest = (request) => dispatch => {
 
 export const deleteRequest = (requestId) => dispatch => {
     return APIUtil.deleteRequest(requestId)
-        .then(() => dispatch(removeRequest(requestId)))
+        .then((request) => dispatch(removeRequest(request)))
 }
 
 export const createFriendship = (friendship) => dispatch => {
@@ -70,4 +78,9 @@ export const deleteFriendship = (friendshipId) => dispatch => {
 export const fetchFriendships = () => dispatch => {
     return APIUtil.fetchFriendships()
         .then((friendships) => dispatch(receiveFriendships(friendships)))
+}
+
+export const fetchRequests = () => dispatch => {
+    return APIUtil.fetchRequests()
+        .then((requests) => dispatch(receiveRequests(requests)))
 }
