@@ -16,7 +16,9 @@ class RequestButton extends React.Component {
     }
 
     accept_request (){
+        let request = this.props.requests.filter(item => item.requester_id === this.props.profileUser.id && item.user_id === this.props.currentUser.id)[0]
         this.props.createFriendship({userA: this.props.currentUser.id, userB: this.props.profileUser.id })
+        this.props.deleteRequest(request.id)
         this.props.rerenderParentCallback()
 
     }

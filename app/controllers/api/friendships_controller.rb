@@ -6,8 +6,8 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def create
-        @request = Request.find_by(user_id: friendship_params[:userA])
-        @request.destroy
+        # @request = Request.find_by(user_id: friendship_params[:userA])
+        # @request.destroy
         @friendship1 = Friendship.new({userA: friendship_params[:userA], userB: friendship_params[:userB]}) 
         @friendship2 = Friendship.new({userA: friendship_params[:userB], userB: friendship_params[:userA]}) 
         if @friendship1.save && @friendship2.save
