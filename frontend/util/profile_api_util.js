@@ -15,3 +15,11 @@ export const updateProfilePhoto = (profile) => {
         processData: false
     })
 }
+
+export const updateProfileInfo = (profile) => {
+    return $.ajax({
+        url: `/api/profiles/${profile.id}`,
+        method: 'PATCH',
+        data: profile
+    })
+}

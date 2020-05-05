@@ -41,7 +41,7 @@ input[type="submit"] {
   cursor: pointer;
 } */
 
-html, body, header, div {
+html, body, header, div, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -54,3 +54,5 @@ html, body, header, div {
   box-sizing: inherit;
   background: transparent;
 }
+
+

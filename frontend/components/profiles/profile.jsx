@@ -3,6 +3,7 @@ import ProfilePhoto from './profile_photo';
 import ProfileCover from './profile_cover';
 import RequestButtonContainer from './request_button_container';
 import FriendsIndexContainer from '../friends/friends_index_container';
+import IntroContainer from '../intro/intro_container';
 
 
 class Profile extends React.Component {
@@ -44,7 +45,7 @@ class Profile extends React.Component {
 
                     <div className="profile-left">
                         <div className="profile-info">
-                            <p>PROFILE INFO HERE</p>
+                            <IntroContainer/>
                         </div>
                         <div className="profile-friends">
                             <FriendsIndexContainer/>

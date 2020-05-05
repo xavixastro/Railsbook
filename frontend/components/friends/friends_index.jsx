@@ -9,7 +9,7 @@ class FriendsIndex extends React.Component {
         <div>
             <div className="friends-label">
                 <img src={window.friendsURL} />
-                <h3>Friends</h3>
+                <h3>Friends ·</h3>
                 <h4>{this.props.users[this.props.match.params.id].friend_ids.length}</h4>
             </div>
             <ul className="friends-list">

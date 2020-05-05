@@ -129,13 +129,10 @@
 //profile info
 
 .profile-info {
-    border: 2px solid black;
+    border: 2px solid #DDDFE2;
     width: 340px;
-    height: 460px;
+    min-height: 200px;
     margin-bottom: 15px;
-    // position: absolute;
-    // float: right;
-    // display: inline;
     background-color: white;
 
 }
@@ -172,6 +169,78 @@
     vertical-align: top;
     background-color: white;
 
+}
+
+//Intro
+
+.intro-label {
+    width: 100px;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.intro-label img {
+    width: 30px;
+    height: 30px;
+}
+
+.intro-label h3 {
+    font-size: 18px;
+    color: #1d2129;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    
+}
+
+.intro-about {
+    width: 290px;
+    min-height: 25px;
+    padding: 8px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'PT Serif', serif;
+}
+
+.intro-items {
+    width: 305px;
+    margin-left: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    list-style: none;
+    border-top: 1px solid #ECEDF0;
+}
+
+.intro-items li {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-family: 'PT Serif', serif;
+
+}
+
+.intro-items img {
+    width: 19px;
+    height: 19px;
+}
+
+.intro-items span {
+    margin-left: 8px;
+}
+
+.intro-items a {
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
