@@ -12,12 +12,22 @@ class NavBar extends React.Component {
         this.state = {
             showRequests: false
         }
+        
     }
 
     componentDidMount(){
         if (this.props.currentUser === undefined) return null;
         // this.props.fetchUser(this.props.currentUser.id);
         this.props.fetchUsers();
+        document.body.addEventListener('click', this.handleBodyClick.bind(this));
+    }
+
+    componentWillUnmount () {
+        document.body.removeEventListener('click', this.handleBodyClick);
+    }
+
+    handleBodyClick() {
+        this.setState({ showRequests: false})
     }
 
 
@@ -26,7 +36,7 @@ class NavBar extends React.Component {
     }
 
     toggleRequest() {
-        this.setState({ showRequests: this.state.showRequests ? false : true})
+        this.setState({ showRequests: this.state.showRequests ? false : true })
     }
 
     render(){
@@ -74,13 +84,14 @@ class NavBar extends React.Component {
                         Home
                     </NavLink>
                 </div>
-                <div onClick={this.toggleRequest.bind(this)}>
+                <div className="dropdown-friends" onClick={this.toggleRequest.bind(this)}>
                     <img className="dropdown-image" src={window.navRequestsURL} />
                     <ul className="dropdown-requests"
                         style={{
                             display: this.state.showRequests ? 'block' : 'none'
                         }}>
-                        {currentUser.received_friend_ids.length === 0 ?  <li>No Requests</li> : <li></li>   } 
+                        
+                        {currentUser.received_friend_ids.length === 0 ? <li>No Requests</li> : <li>Friend Requests</li>   } 
                         {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId = {friendId}/></li>)}
                     </ul>
                 </div>

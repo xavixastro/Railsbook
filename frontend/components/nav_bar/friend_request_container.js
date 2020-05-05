@@ -8,10 +8,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    // logout: () => dispatch(logout()),
-    // // fetchUser: (userId) => dispatch(fetchUser(userId)),
-    // fetchUsers: () => dispatch(fetchUsers()),
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FriendRequest)

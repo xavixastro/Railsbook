@@ -17,7 +17,7 @@ class Feed extends React.Component {
             )
         } else {
             return (
-                <div>
+                <div className="feed-main">
                     <h3>Welcome {this.props.currentUser.email}</h3>
                 </div>
             )

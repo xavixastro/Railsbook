@@ -68,8 +68,8 @@
 //Friend requests nav bar
 
 .dropdown-image {
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
 .dropdown-friends {
@@ -81,8 +81,9 @@
 .dropdown-requests {
     display: none;
     position: absolute;
-    min-width: 250px;
-    min-height: 50px;
+    min-width: 430px;
+    min-height: 33px;
+    left: -330px;
     background-color: #FFFFFF;
     list-style-type: none;
     z-index: 2;
@@ -91,9 +92,20 @@
 
 }
 
-.dropdown-requests li {
-    margin-left: 20px;
-    margin-right: 20px;
+.dropdown-requests li:first-child {
+    height: 33px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    box-shadow: 
+    1px 0 0 0 #C1C1C1,
+    0 1px 0 0 #C1C1C1,
+    1px 1px 0 0 #C1C1C1,   
+    1px 0 0 0 #C1C1C1 inset, 
+    0 1px 0 0 #C1C1C1 inset;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 33px;
 }
 
 
@@ -103,11 +115,20 @@
 }
 
 .friend-request {
-    min-width: 250px;
-    min-height: 50px;
+    min-width: 432px;
+    min-height: 63px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    text-decoration: none;
+
+    box-shadow: 
+        1px 0 0 0 #C1C1C1,
+        0 1px 0 0 #C1C1C1,
+        1px 1px 0 0 #C1C1C1,   
+        1px 0 0 0 #C1C1C1 inset, 
+        0 1px 0 0 #C1C1C1 inset;
+
 }
 
 #friend-request-img {
