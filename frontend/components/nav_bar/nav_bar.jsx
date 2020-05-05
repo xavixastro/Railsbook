@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import FriendRequestContainer from './friend_request_container';
 
 
 class NavBar extends React.Component {
@@ -8,6 +9,9 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.logout = this.logout.bind(this)
+        this.state = {
+            showRequests: false
+        }
     }
 
     componentDidMount(){
@@ -19,6 +23,10 @@ class NavBar extends React.Component {
 
     logout() {
         this.props.logout();
+    }
+
+    toggleRequest() {
+        this.setState({ showRequests: this.state.showRequests ? false : true})
     }
 
     render(){
@@ -67,8 +75,15 @@ class NavBar extends React.Component {
                         Home
                     </NavLink>
                 </div>
-                <div>
-                    <img src={window.navRequestsURL} />
+                <div onClick={this.toggleRequest.bind(this)}>
+                    <img className="dropdown-image" src={window.navRequestsURL} />
+                    <ul className="dropdown-requests"
+                        style={{
+                            display: this.state.showRequests ? 'block' : 'none'
+                        }}>
+                        {currentUser.received_friend_ids.length === 0 ?  <li>No Requests</li> : <li></li>   } 
+                        {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId = {friendId}/></li>)}
+                    </ul>
                 </div>
                 <div>
                     <img src={window.navHelpURL} />

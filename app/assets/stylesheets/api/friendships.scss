@@ -62,5 +62,61 @@
     color: #90949c;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: normal;
+}
+
+
+//Friend requests nav bar
+
+.dropdown-image {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.dropdown-friends {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.dropdown-requests {
+    display: none;
+    position: absolute;
+    min-width: 250px;
+    min-height: 50px;
+    background-color: #FFFFFF;
+    list-style-type: none;
+    z-index: 2;
+    margin-top: 0;
+    padding: 0;
 
 }
+
+.dropdown-requests li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.dropdown-requests > li:hover {
+    display: block;
+    background-color: #E9EBEE;
+}
+
+.friend-request {
+    min-width: 250px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#friend-request-img {
+    width: 53px;
+    height: 53px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
