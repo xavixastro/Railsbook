@@ -33,7 +33,6 @@ class NavBar extends React.Component {
         if (this.props.currentUser === undefined) return null;
         if (this.props.profile === undefined) return null;
 
-        // debugger
 
         const {currentUser} = this.props
 
