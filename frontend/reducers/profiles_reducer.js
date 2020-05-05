@@ -16,6 +16,7 @@ const profilesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_PROFILE_PHOTO:
             nextState[action.profile.id] = action.profile;
+            return nextState;
         default:
             return state;
     }
