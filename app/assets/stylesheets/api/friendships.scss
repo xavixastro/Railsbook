@@ -68,14 +68,18 @@
 //Friend requests nav bar
 
 .dropdown-image {
-    margin-bottom: 3px;
-    margin-top: 3px;
+    margin-bottom: 1px;
 }
 
 .dropdown-friends {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 30px;
     position: relative;
+}
+
+
+.dropdown-friends:hover {
+    background-color: #3C5CA2
 }
 
 .dropdown-requests {
@@ -114,14 +118,15 @@
     background-color: #E9EBEE;
 }
 
+
+
 .friend-request {
     min-width: 432px;
     min-height: 63px;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-between;
     align-items: center;
     text-decoration: none;
-
     box-shadow: 
         1px 0 0 0 #C1C1C1,
         0 1px 0 0 #C1C1C1,
@@ -131,12 +136,24 @@
 
 }
 
+.friend-request span {
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 #friend-request-img {
     width: 53px;
     height: 53px;
     object-fit: cover;
     border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 50px;
 }
+
 
 
 

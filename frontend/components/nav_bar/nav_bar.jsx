@@ -50,7 +50,7 @@ class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <div>
-                    <NavLink
+                    <NavLink className="navbar-feed"
                         to={`/feed`}
                         style={{
                             textDecoration: 'none',
@@ -59,7 +59,7 @@ class NavBar extends React.Component {
                         <img src={window.navLogoURL} />
                     </NavLink>
                 </div>
-                <div>
+                <div className="search-bar">
                     <input type="text" placeholder="Search.."></input>
                     <button type="submit"><i>🔍</i></button>
                 </div>
@@ -74,14 +74,14 @@ class NavBar extends React.Component {
                         <span>{currentUser.first_name}</span>
                     </NavLink>
                 </div>
-                <div>
-                    <NavLink
+                <div className="navbar-home">
+                    <NavLink 
                         to={`/feed`}
                         style={{
                             textDecoration: 'none',
                             color: 'white'
                         }}>
-                        Home
+                        <span>Home</span>
                     </NavLink>
                 </div>
                 <div className="dropdown-friends" onClick={this.toggleRequest.bind(this)}>

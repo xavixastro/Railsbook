@@ -13,7 +13,7 @@ class FriendRequest extends React.Component {
                     <NavLink className="friend-request"
                         to={`/users/${user.id}`}>
                         <img id="friend-request-img" src={profile.profilePhotoUrl} />
-                        {`${user.first_name} ${user.last_name}`}
+                        <span>{`${user.first_name} ${user.last_name}`}</span>
                     </NavLink>
                 </div>)
     }
