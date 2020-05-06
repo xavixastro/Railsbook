@@ -9,6 +9,9 @@ class Friend extends React.Component {
 
         const {user, profile} = this.props
 
+        if (user === undefined) return null;
+        if (profile === undefined) return null;
+
         return (
             <div className="friend-container">
                 <img src={profile.profilePhotoUrl} />

@@ -19,15 +19,15 @@ class NavBar extends React.Component {
         if (this.props.currentUser === undefined) return null;
         // this.props.fetchUser(this.props.currentUser.id);
         this.props.fetchUsers();
-        document.body.addEventListener('click', this.handleBodyClick.bind(this));
+        window.addEventListener('click', this.handleBodyClick.bind(this));
     }
 
     componentWillUnmount () {
-        document.body.removeEventListener('click', this.handleBodyClick);
+        window.removeEventListener('click', this.handleBodyClick);
     }
 
-    handleBodyClick() {
-        this.setState({ showRequests: false})
+    handleBodyClick(e) {
+        this.setState({ showRequests: false});
     }
 
 
@@ -35,7 +35,8 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
-    toggleRequest() {
+    toggleRequest(e) {
+        e.stopPropagation();
         this.setState({ showRequests: this.state.showRequests ? false : true })
     }
 

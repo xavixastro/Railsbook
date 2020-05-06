@@ -9,6 +9,9 @@ class FriendRequest extends React.Component {
 
         const {user, profile} = this.props
 
+        if (user === undefined) return null;
+        if (profile === undefined) return null;
+
         return (<div >
                     <NavLink className="friend-request"
                         to={`/users/${user.id}`}>
