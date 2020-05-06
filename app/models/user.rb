@@ -53,6 +53,10 @@ class User < ApplicationRecord
         through: :sent_requests,
         source: :user
 
+    has_many :posts,
+        foreign_key: :author_id,
+        class_name: :Post
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

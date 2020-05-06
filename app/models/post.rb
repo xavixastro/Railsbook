@@ -10,4 +10,16 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
+
+    validates :profile_id, :author_id, :content, presence: true
+
+    belongs_to :author,
+        foreign_key: :author_id, 
+        class_name: :User
+
+    belongs_to :profile,
+        foreign_key: :profile_id, 
+        class_name: :Profile
+
+    
 end

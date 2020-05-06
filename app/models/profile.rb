@@ -22,6 +22,10 @@ class Profile < ApplicationRecord
 
     has_one_attached :profile_photo
 
+    has_many :posts,
+        foreign_key: :profile_id,
+        class_name: :Post
+
     before_create :set_default_image
 
     def set_default_image 
