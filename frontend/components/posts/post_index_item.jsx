@@ -1,5 +1,8 @@
 import React from 'react';
 import PostDetailContainer from './post_detail_container';
+import CommentFormContainer from '../comments/comment_form_container';
+import { NavLink } from 'react-router-dom';
+
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -23,17 +26,17 @@ class PostIndexItem extends React.Component {
         let postHeaderInfo;
 
         if (profileUser.id === postAuthor.id) {
-            postHeaderInfo = <div className="post-header-info"><span>{postAuthor.first_name} {postAuthor.last_name}</span></div>
+            postHeaderInfo = <div><span><NavLink className = "post-header-link" to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</NavLink></span></div>
         } else {
-            postHeaderInfo = <div className="post-header-info">
-                                <span>{postAuthor.first_name} {postAuthor.last_name}</span>
+            postHeaderInfo = <div>
+                                <span><NavLink className="post-header-link" to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</NavLink></span>
                                 <span className="post-header-arrow"> ▸ </span>
-                                <span>{profileUser.first_name} {profileUser.last_name}</span>
+                                <span><NavLink className="post-header-link" to={`/users/${profileUser.id}`}>{profileUser.first_name} {profileUser.last_name}</NavLink></span>
                             </div>
         }
 
         return (
-            <div className="post-index-item" onClick={this.handleClick}>
+            <div className="post-index-item" /*onClick={this.handleClick}*/>
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>
@@ -43,6 +46,7 @@ class PostIndexItem extends React.Component {
                 </div>
                 <p className="post-body">{post.content}</p>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
+                <CommentFormContainer postId={post.id}/>
             </div>
         );
     }

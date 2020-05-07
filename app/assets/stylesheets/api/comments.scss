@@ -1,0 +1,11 @@
+// Place all the styles related to the api/comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.comment-form-avatar {
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    object-fit: cover;
+}

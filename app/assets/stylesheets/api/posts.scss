@@ -33,6 +33,7 @@
     font-weight: bold;
 }
 
+
 .post-form-body {
     display: flex;
     align-items: center;
@@ -121,6 +122,14 @@ input[disabled=disabled], input:disabled {
 .post-header-info {
     font-family: 'Roboto', sans-serif;
     color: #385898;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post-header-link {
+    text-decoration: none;
+    color: #385898;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: bold;
 }

@@ -18,7 +18,6 @@ class PostIndex extends React.Component {
 
         return (
             <div className="post-index">
-                <h1>All Posts</h1>
                 <ul className="post-list">
                     {
                         this.props.posts.reverse().map(post => <PostIndexItem post={post} key={post.id} profiles={this.props.profiles} users={this.props.users}/>)

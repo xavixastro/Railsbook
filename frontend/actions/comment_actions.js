@@ -1,0 +1,30 @@
+import * as CommentApiUtil from '../util/comments_api_util';
+
+export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+export const RECEIVE_COMMMENTS = 'RECEIVE_COMMMENTS';
+
+
+const receiveComment = (comment) => ({
+    type: RECEIVE_COMMENT,
+    comment
+});
+
+const receiveComments = (comments) => {
+    return {
+        type: RECEIVE_COMMMENTS,
+        comments
+    };
+};
+
+
+
+export const requestComments = () => dispatch => {
+    return CommentApiUtil.fetchComments()
+        .then(comments => dispatch(receiveComments(comments)))
+};
+
+
+export const createComment = comment => dispatch => {
+    return CommentApiUtil.createComment(comment)
+        .then(comment => dispatch(receiveComment(comment)))
+};

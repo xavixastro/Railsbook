@@ -4,13 +4,15 @@ import profilesReducer from './profiles_reducer';
 import requestsReducer from './requests_reducer';
 import friendshipsReducer from './friendships_reducer';
 import postsReducer from './posts_reducer';
+import commentsReducer from './comments_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer, 
     profiles: profilesReducer,
     requests: requestsReducer,
     friendships: friendshipsReducer,
-    posts: postsReducer
+    posts: postsReducer,
+    comments: commentsReducer
 });
 
 export default entitiesReducer;
