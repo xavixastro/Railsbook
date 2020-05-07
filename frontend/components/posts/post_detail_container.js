@@ -5,10 +5,12 @@ import { selectCommentsByPost } from '../../reducers/selectors';
 import { requestPost } from '../../actions/posts_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         post: state.entities.posts[ownProps.postId],
-        comments: selectCommentsByPost(state, ownProps.postId)
+        comments: selectCommentsByPost(state, ownProps.postId), 
+        profiles: state.entities.profiles,
+        users: state.entities.users
     }
 };
 

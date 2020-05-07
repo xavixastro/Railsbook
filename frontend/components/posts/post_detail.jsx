@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 class PostDetail extends React.Component {
 
@@ -7,22 +9,18 @@ class PostDetail extends React.Component {
     }
 
     render() {
-        const { post, comments} = this.props;
+        const { post, comments, profiles, users} = this.props;
         return (
             <div className="post-detail">
-                <div className="post-content">
-                    {post.content}
-                </div>
                 <ul className="post-comments">
-                    <div className="post-comment columns">
-                        <p>Author</p>
-                        <p>Content</p>
-                    </div>
                     {comments.map(comment => {
                         return (
-                            <div className="post-comment" key={comment.id}>
-                                <p>{comment.user_id}</p>
-                                <p>{comment.content}</p>
+                            <div className="comment" key={comment.id}>
+                                <img className="comment-avatar" src={profiles[comment.user_id].profilePhotoUrl} />
+                                <p className="comment-body">
+                                    <span><NavLink className="post-comment-link" to={`/users/${comment.user_id}`}>{users[comment.user_id].first_name} {users[comment.user_id].last_name}</NavLink> </span>
+                                    <span>{comment.content}</span>
+                                </p>
                             </div>
                         )
                     })}

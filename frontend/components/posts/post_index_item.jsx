@@ -36,7 +36,7 @@ class PostIndexItem extends React.Component {
         }
 
         return (
-            <div className="post-index-item" onClick={this.handleClick}>
+            <div className="post-index-item">
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>
@@ -45,8 +45,9 @@ class PostIndexItem extends React.Component {
                     </div>
                 </div>
                 <p className="post-body">{post.content}</p>
-                {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
+                <div onClick={this.handleClick}>Comments</div>
                 <CommentFormContainer postId={post.id}/>
+                {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
             </div>
         );
     }

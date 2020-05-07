@@ -3,9 +3,99 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.post-comments {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+
+
+.comment-avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+
+.comment {
+    width: 90%;
+    min-height: 50px;
+    margin: 0 auto;
+    // margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.comment-body {
+    padding: 8px 10px;
+    display: block;
+    background-color: #f2f3f5;
+    border-radius: 18px;
+    box-sizing: border-box;
+    color: #1c1e21;
+    display: inline-block;
+    line-height: 16px;
+    margin: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    position: relative;
+    white-space: normal;
+    word-break: break-word;
+    margin-left: 10px;
+}
+
+.post-comment-link {
+    text-decoration: none;
+    color: #385898;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+//Form 
+
+.comment-form {
+    padding-bottom: 10px;
+}
+
 .comment-form-avatar {
     border-radius: 50%;
     height: 42px;
     width: 42px;
     object-fit: cover;
+}
+
+
+.comment-form-body {
+    width: 90%;
+    // min-height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.comment-form-body textarea {
+    background-color: #f2f3f5;
+    border: 1px solid #ccd0d5;
+    border-radius: 16px;
+    justify-content: flex-end;
+    color: #1c1e21;
+    font-size: 13px;
+    width: 100%;
+    min-height: 30px;
+    resize: none;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+.comment-form-submit {
+    background-color: #4267B2;
+    color: white;
+    text-align: center;
 }
