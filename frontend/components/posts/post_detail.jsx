@@ -10,6 +10,7 @@ class PostDetail extends React.Component {
 
     render() {
         const { post, comments, profiles, users} = this.props;
+        if (comments.length === 0) return null;
         return (
             <div className="post-detail">
                 <ul className="post-comments">

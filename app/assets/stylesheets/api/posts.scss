@@ -153,3 +153,13 @@ input[disabled=disabled], input:disabled {
     font-weight: 300;
     padding: 20px;
 }
+
+.post-comments-toggle {
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-family: 'PT Serif', serif;
+    color: #385898;
+    cursor: pointer;
+}

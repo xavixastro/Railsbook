@@ -9,7 +9,7 @@ class PostIndexItem extends React.Component {
         super(props);
 
         this.state = {
-            detail: false
+            detail: true
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -45,7 +45,7 @@ class PostIndexItem extends React.Component {
                     </div>
                 </div>
                 <p className="post-body">{post.content}</p>
-                <div onClick={this.handleClick}>Comments</div>
+                <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments" }</label>
                 <CommentFormContainer postId={post.id}/>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
             </div>
