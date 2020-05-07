@@ -36,7 +36,7 @@ class PostIndexItem extends React.Component {
         }
 
         return (
-            <div className="post-index-item" /*onClick={this.handleClick}*/>
+            <div className="post-index-item" onClick={this.handleClick}>
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>

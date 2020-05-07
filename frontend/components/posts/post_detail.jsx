@@ -7,13 +7,13 @@ class PostDetail extends React.Component {
     }
 
     render() {
-        const { post/*, comments*/ } = this.props;
+        const { post, comments} = this.props;
         return (
             <div className="post-detail">
                 <div className="post-content">
                     {post.content}
                 </div>
-                {/* <ul className="post-comments">
+                <ul className="post-comments">
                     <div className="post-comment columns">
                         <p>Author</p>
                         <p>Content</p>
@@ -26,7 +26,7 @@ class PostDetail extends React.Component {
                             </div>
                         )
                     })}
-                </ul> */}
+                </ul>
             </div>
         );
     }

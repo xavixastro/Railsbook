@@ -1,7 +1,7 @@
 import * as CommentApiUtil from '../util/comments_api_util';
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
-export const RECEIVE_COMMMENTS = 'RECEIVE_COMMMENTS';
+export const RECEIVE_COMMENTS = 'RECEIVE_COMMMENTS';
 
 
 const receiveComment = (comment) => ({
@@ -11,7 +11,7 @@ const receiveComment = (comment) => ({
 
 const receiveComments = (comments) => {
     return {
-        type: RECEIVE_COMMMENTS,
+        type: RECEIVE_COMMENTS,
         comments
     };
 };
