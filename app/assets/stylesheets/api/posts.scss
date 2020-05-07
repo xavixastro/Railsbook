@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+//Post Form
 
 .post-form {
     height: 154px;
@@ -82,4 +82,65 @@
 
 input[disabled=disabled], input:disabled {
     opacity: 0.4;
+}
+
+
+
+//Post Items 
+
+.post-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.post-index-item {
+    display: block;
+    width: 100%;
+    min-height: 185px;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    border: 2px solid #DDDFE2;
+    background-color: white;
+}
+
+.post-header {
+    width: 95%;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.post-header > div {
+    margin-left: 15px;
+}
+
+.post-header-info {
+    font-family: 'Roboto', sans-serif;
+    color: #385898;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post-header-date {
+    color: #616770;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.post-header-arrow {
+    color: #60666F;
+}
+
+.post-body {
+    width: 90%;
+    min-height: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 20px;
 }

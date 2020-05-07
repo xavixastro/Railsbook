@@ -7,7 +7,10 @@ import { selectPostsByProfile } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => ({
-    posts: selectPostsByProfile(state, ownProps.match.params.id )
+    posts: selectPostsByProfile(state, ownProps.match.params.id ),
+    profiles: state.entities.profiles, 
+    users: state.entities.users
+
     // posts: Object.values(state.entities.posts) 
 });
 

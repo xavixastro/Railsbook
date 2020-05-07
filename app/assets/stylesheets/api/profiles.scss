@@ -103,7 +103,7 @@
 
 .profile-main {
     background-color: #E9EBEE;
-    height: 2000px;
+    min-height: 3000px;
 }
 
 .profile-container {
@@ -237,14 +237,12 @@
 }
 
 .profile-post-index {
-    border: 2px solid black;
+    // border: 2px solid #DDDFE2;
     width: 530px;
-    height: 1300px;
-    display: inline-flex;
+    min-height: 1300px;
+    // display: inline-flex;
     float: right;
     vertical-align: top;
-    background-color: white;
-
 }
 
 //Intro
