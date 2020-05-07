@@ -9,7 +9,7 @@ class Api::CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         if @comment.save
-            render :show
+            render :info
         else
             render json: @comment.errors.full_messages, status: 422
         end
