@@ -31,7 +31,7 @@ export const requestPosts = () => dispatch => {
 };
 
 export const requestPost = (postId) => dispatch => {
-    return PostApiUtil.fetchTea(postId)
+    return PostApiUtil.fetchPost(postId)
         .then(payload => {
             dispatch(receivePostDetail(payload))
         })

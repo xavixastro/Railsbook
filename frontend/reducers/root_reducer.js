@@ -7,8 +7,7 @@ import postsReducer from './posts_reducer';
 const rootReducer = combineReducers({
     entities: entitiesReducer,
     session: sessionReducer,
-    errors: errorsReducer,
-    posts: postsReducer
+    errors: errorsReducer
 });
 
 export default rootReducer;

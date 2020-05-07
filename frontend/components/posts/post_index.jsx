@@ -11,6 +11,11 @@ class PostIndex extends React.Component {
     }
 
     render() {
+
+        if (this.props.posts[0] === undefined) return null;
+
+        // debugger
+
         return (
             <div className="post-index">
                 <h1>All Posts</h1>

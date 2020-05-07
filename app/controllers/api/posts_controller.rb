@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def create
-        @post = Post.new(tea_params)
+        @post = Post.new(post_params)
         if @post.save
             render :info
         else
@@ -21,7 +21,7 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:user_id, :profile_id, :content)
+        params.require(:post).permit(:author_id, :profile_id, :content)
     end
 
 end

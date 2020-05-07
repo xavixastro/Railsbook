@@ -4,6 +4,8 @@ import ProfileCover from './profile_cover';
 import RequestButtonContainer from './request_button_container';
 import FriendsIndexContainer from '../friends/friends_index_container';
 import IntroContainer from '../intro/intro_container';
+import PostIndexContainer from '../posts/post_index_container';
+import PostFormContainer from '../posts/post_form_container';
 
 
 class Profile extends React.Component {
@@ -55,11 +57,11 @@ class Profile extends React.Component {
 
                     <div className="profile-right">
                         <div className="profile-post-form">
-                            <p>POST FORM HERE</p>
+                            <PostFormContainer/>
                         </div>
 
                         <div className="profile-post-index">
-                            <p>POSTS LIST HERE</p>
+                            <PostIndexContainer/>
                         </div>
                     </div>
                 </div>
