@@ -33,21 +33,22 @@ class PostForm extends React.Component {
     }
 
     render() {
+
+        if (this.props.profilePhotoUrl === undefined) return null;
+
         return (
-            <>
-                <h1>Add Post</h1>
-                <form onSubmit={this.handleSubmit} className="post-form">
-                    <label>
-                        Post:
-                        <textarea
-                                value={this.state.content}
-                                onChange={this.update()}
-                        />
-                    </label>
-                    
-                    <input type="submit" value="Add Post" />
-                </form>
-            </>
+            <form onSubmit={this.handleSubmit} className="post-form">
+                <label className="post-form-header"><img src={window.createPostURL}></img><span>Create Post</span></label>
+                <div className="post-form-body">
+                    <img className="post-form-avatar" src={this.props.profilePhotoUrl} />
+                    <textarea
+                        value={this.state.content}
+                        placeholder="What's on your mind?"
+                        onChange={this.update()}
+                    />
+                </div>
+                <input type="submit" value="Post" disabled={this.state.content === ''}/>
+            </form>
         )
     }
 }

@@ -1,5 +1,5 @@
 export const selectPostsByProfile = (state, profileId) => {
-    debugger
+    // debugger
     if (state.entities.profiles[profileId].post_ids === undefined) return [];
     return state.entities.profiles[profileId].post_ids
         .map(postId => {

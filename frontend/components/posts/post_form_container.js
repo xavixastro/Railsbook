@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     // debugger
     return{
         profileId: ownProps.match.params.id,
-        authorId: state.session.id
+        authorId: state.session.id, 
+        profilePhotoUrl: state.entities.profiles[state.session.id].profilePhotoUrl
     }
 }
 
