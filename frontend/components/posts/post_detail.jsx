@@ -9,6 +9,7 @@ class PostDetail extends React.Component {
     }
 
     render() {
+        // debugger
         const { post, comments, profiles, users} = this.props;
         if (comments.length === 0) return null;
         return (

@@ -40,7 +40,7 @@ class Profile extends React.Component {
                 <div className="profile-container">
                     <div className="profile-top">
                         <ProfileCover />
-                        <h1>{this.props.users[this.props.match.params.id].first_name} {this.props.users[this.props.match.params.id].last_name}</h1>
+                        <h1>{this.props.users[this.props.match.params.id].first_name}<span> </span>{this.props.users[this.props.match.params.id].last_name}</h1>
                         <ProfilePhoto profile={this.props.profiles[this.props.match.params.id]} updateProfilePhoto={this.props.updateProfilePhoto} currentUser={currentUser} />
                         {(currentUser.id !== this.props.users[this.props.match.params.id].id) ? <RequestButtonContainer rerenderParentCallback={this.rerenderParentCallback.bind(this)}/> : ""}
                     </div>

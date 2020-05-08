@@ -20,10 +20,13 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
+        // if (post === undefined) return null;
         const { post, users, profiles } = this.props;
         const profileUser = users[post.profile_id];
         const postAuthor = users[post.author_id];
         let postHeaderInfo;
+
+        
 
         if (profileUser.id === postAuthor.id) {
             postHeaderInfo = <div><span><NavLink className = "post-header-link" to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</NavLink></span></div>

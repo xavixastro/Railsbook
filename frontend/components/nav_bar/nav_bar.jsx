@@ -16,8 +16,6 @@ class NavBar extends React.Component {
     }
 
     componentDidMount(){
-        if (this.props.currentUser === undefined) return null;
-        // this.props.fetchUser(this.props.currentUser.id);
         this.props.fetchUsers();
         window.addEventListener('click', this.handleBodyClick.bind(this));
     }

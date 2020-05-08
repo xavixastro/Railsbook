@@ -13,6 +13,8 @@ class PostIndex extends React.Component {
 
     render() {
 
+        //validation!
+
         if (this.props.posts[0] === undefined) return null;
 
         // debugger
