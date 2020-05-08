@@ -9,6 +9,8 @@ import { requestComments} from '../actions/comment_actions';
 const mapStateToProps = state => ({
     users: state.entities.users,
     profiles: state.entities.profiles,
+    posts: state.entities.posts, //n
+    comments: state.entities.comments,  //n
     currentUser: state.entities.users[state.session.id]
 })
 
