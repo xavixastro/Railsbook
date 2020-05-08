@@ -22,7 +22,7 @@ Try it yourself! You can access the live demo here: [Railsbook Live](https://rai
 
 Users can upload a profile photo just by hovering over the image avatar on their profile and clicking 'Update'
 
-![][upload]
+![Alt Text][upload]
 
 [upload]: https://github.com/xavixastro/Railsbook/tree/master/app/assets/demo/photoUpload.gif "Upload Photo"
 
