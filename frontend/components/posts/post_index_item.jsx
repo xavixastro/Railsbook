@@ -38,6 +38,8 @@ class PostIndexItem extends React.Component {
                             </div>
         }
 
+        // debugger
+
         return (
             <div className="post-index-item">
                 <div className="post-header">

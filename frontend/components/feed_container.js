@@ -1,13 +1,23 @@
 import Feed from './feed';
 import { connect } from 'react-redux';
-// import {fetchUser } from '../actions/session_actions'
+import { fetchUsers } from '../actions/session_actions';
+import { requestPosts } from '../actions/posts_actions';
+import { requestComments} from '../actions/comment_actions';
+
+
 
 const mapStateToProps = state => ({
+    users: state.entities.users,
+    profiles: state.entities.profiles,
     currentUser: state.entities.users[state.session.id]
 })
 
-// const mapDispatchToProps = dispatch => ({
-//     fetchUser: (userId) => dispatch(fetchUser(userId))
-// })
+const mapDispatchToProps = (dispatch) => {
+    return ({
+        fetchUsers: () => dispatch(fetchUsers()),
+        fetchPosts: () => dispatch(requestPosts()),
+        fetchComments: () => dispatch(requestComments())
+    });
+};
 
-export default connect(mapStateToProps)(Feed)
+export default connect(mapStateToProps, mapDispatchToProps)(Feed) 

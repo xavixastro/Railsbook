@@ -220,9 +220,11 @@
     border: 2px solid #DDDFE2;
     width: 530px;
     height: 210px;
+    margin: 0 auto;
     margin-bottom: 15px;
-    float: right;
+    // float: right;
     background-color: white;
+    display: block;
 
 }
 
@@ -241,8 +243,12 @@
     width: 530px;
     min-height: 1300px;
     // display: inline-flex;
-    float: right;
-    vertical-align: top;
+    // float: right;
+    // vertical-align: top;
+    margin: 0 auto;
+
+    display: block;
+
 }
 
 //Intro
@@ -376,5 +382,14 @@
 
 .feed-main {
     min-height: 2000px;
+    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.feed-main > div {
+    display: block;
 }
 

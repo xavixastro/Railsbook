@@ -5,7 +5,6 @@ import { selectCommentsByPost } from '../../reducers/selectors';
 import { requestPost } from '../../actions/posts_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         post: state.entities.posts[ownProps.postId],
         comments: selectCommentsByPost(state, ownProps.postId), 
