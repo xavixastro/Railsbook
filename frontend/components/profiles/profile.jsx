@@ -28,7 +28,6 @@ class Profile extends React.Component {
 
     render(){
 
-        // debugger
 
         if (this.props.profiles[this.props.match.params.id] === undefined) return null;
 

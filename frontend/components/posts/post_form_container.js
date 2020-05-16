@@ -5,7 +5,6 @@ import { createPost} from '../../actions/posts_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return{
         profileId: ownProps.match.params.id,
         authorId: state.session.id, 

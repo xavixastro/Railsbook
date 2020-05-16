@@ -4,7 +4,6 @@ import Friend from './friend'
 
 class FriendsIndex extends React.Component {
     render(){
-        // debugger
         return (
         <div>
             <div className="friends-label">

@@ -6,7 +6,6 @@ import {createRequest, deleteRequest, createFriendship, deleteFriendship} from '
 
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         profileUser: state.entities.users[ownProps.match.params.id],

@@ -21,7 +21,6 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_FRIENDSHIP:
             nextState[action.payload.friendship1.userA].friend_ids.push(action.payload.friendship1.userB)
             nextState[action.payload.friendship2.userA].friend_ids.push(action.payload.friendship2.userB)
-            // debugger
             nextState[action.payload.friendship1.userA].received_friend_ids = nextState[action.payload.friendship1.userA].received_friend_ids.filter(item => item !== action.payload.friendship1.userB)
             nextState[action.payload.friendship1.userB].sent_friend_ids = nextState[action.payload.friendship1.userB].sent_friend_ids.filter(item => item !== action.payload.friendship1.userA)
             return nextState;

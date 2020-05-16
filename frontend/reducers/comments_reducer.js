@@ -10,7 +10,6 @@ const commentsReducer = (state = {}, action) => {
             nextState[action.comment.id] = action.comment;
             return nextState;
         case RECEIVE_COMMENTS:
-            // debugger
             return Object.assign(nextState, action.comments)
         case RECEIVE_POST_DETAIL:
             return Object.assign(nextState, action.payload.comments);

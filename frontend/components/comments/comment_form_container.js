@@ -5,7 +5,6 @@ import { createComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         postId: ownProps.postId,
         userId: state.session.id,

@@ -5,8 +5,6 @@ import { NavLink } from 'react-router-dom';
 class Friend extends React.Component {
     render() {
 
-        // debugger
-
         const {user, profile} = this.props
 
         if (user === undefined) return null;

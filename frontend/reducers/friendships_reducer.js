@@ -11,7 +11,6 @@ const FriendshipsReducer = (state = {}, action) => {
             nextState[action.payload.friendship2.id] = action.payload.friendship2;
             return nextState;
         case REMOVE_FRIENDSHIP:
-            // debugger
             delete nextState[action.friendship.id];
             return nextState;
         default:

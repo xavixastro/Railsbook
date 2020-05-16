@@ -29,7 +29,6 @@ class RequestButton extends React.Component {
     }
 
     remove_friend () {
-        // debugger
         let friendship1 = this.props.friendships.filter(item => item.userA === this.props.currentUser.id && item.userB === this.props.profileUser.id)[0]
         let friendship2 = this.props.friendships.filter(item => item.userB === this.props.currentUser.id && item.userA === this.props.profileUser.id)[0]
         this.props.deleteFriendship(friendship1.id)
@@ -38,7 +37,6 @@ class RequestButton extends React.Component {
     }
 
     cancel_request() {
-        // debugger
         let request = this.props.requests.filter(item => item.requester_id === this.props.currentUser.id && item.user_id === this.props.profileUser.id)[0]
         this.props.deleteRequest(request.id)
         this.props.rerenderParentCallback()
