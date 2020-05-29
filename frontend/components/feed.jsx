@@ -2,6 +2,7 @@
 import React from 'react';
 import FeedPostIndexContainer from '../components/posts/feed_post_index_container';
 import FeedPostFormContainer from '../components/posts/feed_post_form_container';
+import SideBar from './side_bar/side_bar';
 
 class Feed extends React.Component {
 
@@ -24,29 +25,17 @@ class Feed extends React.Component {
         if (this.props.comments[1] === undefined) return null;
 
 
-            return (
-                <div className="feed-main">
-                    <div className="social-links">
-
-                        <a className="social-link-item" href="https://github.com/xavixastro">
-                            <img src={window.gitHubURL} />
-                            <span>Github</span>
-                        </a>
-
-                        <a className="social-link-item" href="https://www.linkedin.com/in/xavixastro/">
-                            <img src={window.linkedInURL} />
-                            <span>LinkedIn</span>
-                        </a>
-
-                    </div>
-                    <div className="profile-post-form">
-                        <FeedPostFormContainer />
-                    </div>
-                    <div className="profile-post-index">
-                        <FeedPostIndexContainer />
-                    </div>
+        return (
+            <div className="feed-main">
+                <div><SideBar></SideBar></div>
+                <div className="profile-post-form">
+                    <FeedPostFormContainer />
                 </div>
-            )
+                <div className="profile-post-index">
+                    <FeedPostIndexContainer />
+                </div>
+            </div>
+        )
     }
 }
 

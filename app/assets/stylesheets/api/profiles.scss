@@ -400,6 +400,17 @@
     justify-content: space-between;
     margin-left: 200px;
     margin-top: 100px;
+    position: fixed;
+}
+
+.social-link-header {
+    width: 185px;
+    height: 35px;
+    margin-left: 8px;
+    font-family: "PT Serif";
+    font-size: 18px;
+    font-weight: bold;
+    color: #616770;
 }
 
 .social-link-item {
