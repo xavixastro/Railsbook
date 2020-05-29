@@ -27,18 +27,17 @@ class Feed extends React.Component {
             return (
                 <div className="feed-main">
                     <div className="social-links">
-                        <div className="social-link-item">
-                            <a href="https://github.com/xavixastro">
-                                <img src={window.gitHubURL} />
-                                <span>Github</span>
-                            </a>
-                        </div>
-                        <div className="social-link-item">
-                            <a href="https://www.linkedin.com/in/xavixastro/">
-                                <img src={window.linkedInURL} />
-                                <span>LinkedIn</span>
-                            </a>
-                        </div>
+
+                        <a className="social-link-item" href="https://github.com/xavixastro">
+                            <img src={window.gitHubURL} />
+                            <span>Github</span>
+                        </a>
+
+                        <a className="social-link-item" href="https://www.linkedin.com/in/xavixastro/">
+                            <img src={window.linkedInURL} />
+                            <span>LinkedIn</span>
+                        </a>
+
                     </div>
                     <div className="profile-post-form">
                         <FeedPostFormContainer />

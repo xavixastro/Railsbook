@@ -408,13 +408,17 @@
     padding: 1px;
     display: flex;
     align-items: center;
+    margin-bottom: 1px;
+    margin-top: 1px;
 }
 
-.social-link-item :hover {
-   background-color: gray;
+.social-link-item:hover {
+    background-color: #EAEBEE;
+    border-radius: 2px;
+    border: 1px solid #DDDFE2;
 }
 
-.social-link-item a {
+.social-link-item img {
     margin-left: 8px;
     display: flex;
     align-items: center;
