@@ -70,7 +70,6 @@
     height: 34px;
     width: 92px;
     text-decoration: 'none';
-    // padding: 2px 6px;
     font-size: 14px;
     color: 'white';
     font-weight: bold;
@@ -78,6 +77,20 @@
 
 .navbar-home:hover {
     background-color: #3C5CA2
+}
+
+.navbar-logout {
+    background-color: #ffffff;
+    font-size: 14px;
+    color: 'white';
+    color: #000000;
+    height: 25px;
+    border: none;
+}
+
+.navbar-logout span {
+    padding: 2px;
+
 }
 
 

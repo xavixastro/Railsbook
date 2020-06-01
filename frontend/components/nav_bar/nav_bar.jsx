@@ -97,7 +97,7 @@ class NavBar extends React.Component {
                 <div>
                     <img src={window.navHelpURL} />
                 </div>
-                <button onClick={this.logout}>Log Out</button>
+                <button className="navbar-logout" onClick={this.logout}><span>Log Out</span></button>
             </div>
         )
     }
