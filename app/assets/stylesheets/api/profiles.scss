@@ -338,6 +338,10 @@
 
 //Search bar
 
+.search-menu {
+    width: 448px;
+}
+
 .search-bar {
     margin-left: 0;
     min-width: 144px;
@@ -350,7 +354,6 @@
     left: -1px;
     margin-left: 30px;
     margin-top: 0;
-    max-width: 448px;
     overflow: hidden;
     position: relative;
     display: block;
@@ -387,6 +390,22 @@
     top: 0;
     outline: none;
 
+
+}
+
+.search-results {
+    position: absolute;
+    min-width: 448px;
+    min-height: 33px;
+    background-color: #FFFFFF;
+    list-style-type: none;
+    z-index: 2;
+    margin-top: 0;
+    padding: 0;
+    margin-left: 30px;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    box-sizing: border-box;
 
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import FriendRequestContainer from './friend_request_container';
+import SearchContainer from './search_container';
 
 
 class NavBar extends React.Component {
@@ -9,11 +10,9 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showRequests: false,
-            searchWord: ""
+            showRequests: false
         }     
         this.logout = this.logout.bind(this)
-        this.handleSearch = this.handleSearch.bind(this)
     }
 
     componentDidMount(){
@@ -32,11 +31,6 @@ class NavBar extends React.Component {
 
     logout() {
         this.props.logout();
-    }
-
-    handleSearch(e) {
-        e.preventDefault();
-        this.setState({ searchWord: e.currentTarget.value })
     }
 
     toggleRequest(e) {
@@ -64,10 +58,9 @@ class NavBar extends React.Component {
                         <img src={window.navLogoURL} />
                     </NavLink>
                 </div>
-                <div className="search-bar">
-                    <input type="text" placeholder="Search.." value={this.state.search} onChange={this.handleSearch}></input>
-                    <button type="submit"><i>🔍</i></button>
-                </div>
+
+                <SearchContainer/>
+
                 <div >
                     <NavLink className="navbar-avatar"
                         to={`/users/${currentUser.id}`}

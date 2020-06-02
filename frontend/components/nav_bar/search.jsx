@@ -4,21 +4,41 @@ import { NavLink } from 'react-router-dom';
 
 class Search extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            search: ""
+        }
+        this.handleSearch = this.handleSearch.bind(this)
+    }
+
+
+    handleSearch(e) {
+        e.preventDefault();
+        this.setState({ search: e.currentTarget.value })
+    }
+
 
     render() {
+        return(
+            <div className="search-menu">
+                <div className="search-bar">
+                    <input type="text" placeholder="Search.." value={this.state.search} onChange={this.handleSearch}></input>
+                    <button type="submit"><i>🔍</i></button>
+                </div>
+                <ul className="search-results">
+                    {/* style={{
+                            display: this.state.search != "" ? 'block' : 'none'
+                        }}> */}
 
-        const { user, profile } = this.props
-
-        if (user === undefined) return null;
-        if (profile === undefined) return null;
-
-        return (<div >
-            <NavLink className="friend-request"
-                to={`/users/${user.id}`}>
-                <img id="friend-request-img" src={profile.profilePhotoUrl} />
-                <span>{`${user.first_name} ${user.last_name}`}</span>
-            </NavLink>
-        </div>)
+                    <li>uno</li>
+                    <li>dos</li>
+                    <li>tres</li>
+                    {/* {currentUser.received_friend_ids.length === 0 ? <li>No Requests</li> : <li>Friend Requests</li>}
+                        {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId={friendId} /></li>)} */}
+                </ul>
+            </div>
+        )
     }
 }
 
