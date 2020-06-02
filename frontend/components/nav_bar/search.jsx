@@ -20,22 +20,21 @@ class Search extends React.Component {
 
 
     render() {
+    
+        let user = Object.values(this.props.users);
+
         return(
             <div className="search-menu">
                 <div className="search-bar">
                     <input type="text" placeholder="Search.." value={this.state.search} onChange={this.handleSearch}></input>
                     <button type="submit"><i>🔍</i></button>
                 </div>
-                <ul className="search-results">
-                    {/* style={{
-                            display: this.state.search != "" ? 'block' : 'none'
-                        }}> */}
+                <ul className="search-results"
+                    style={{
+                        display: this.state.search === "" ? 'none' : 'block'
+                    }}>
 
-                    <li>uno</li>
-                    <li>dos</li>
-                    <li>tres</li>
-                    {/* {currentUser.received_friend_ids.length === 0 ? <li>No Requests</li> : <li>Friend Requests</li>}
-                        {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId={friendId} /></li>)} */}
+                {user.filter(user => user.first_name.toUpperCase().startsWith(this.state.search.toUpperCase()) || user.last_name.toUpperCase().startsWith(this.state.search.toUpperCase())).map(result => <li>{result.first_name} {result.last_name}</li>)}
                 </ul>
             </div>
         )
