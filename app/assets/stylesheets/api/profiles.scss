@@ -396,7 +396,7 @@
 .search-results {
     position: absolute;
     min-width: 448px;
-    min-height: 33px;
+    min-height: 36px;
     background-color: #FFFFFF;
     list-style-type: none;
     z-index: 2;
@@ -406,7 +406,20 @@
     border: 1px solid #D9D9D9;
     border-radius: 3px;
     box-sizing: border-box;
+}
 
+.search-link {
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.search-link:hover {
+    background-color: #ECF0F8;
 }
 
 

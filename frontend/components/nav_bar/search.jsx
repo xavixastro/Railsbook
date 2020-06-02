@@ -12,6 +12,18 @@ class Search extends React.Component {
         this.handleSearch = this.handleSearch.bind(this)
     }
 
+    componentDidMount() {
+        window.addEventListener('click', this.handleBodyClick.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('click', this.handleBodyClick);
+    }
+
+    handleBodyClick(e) {
+        this.setState({ search: "" });
+    }
+
 
     handleSearch(e) {
         e.preventDefault();
@@ -21,7 +33,7 @@ class Search extends React.Component {
 
     render() {
     
-        let user = Object.values(this.props.users);
+        let users = Object.values(this.props.users);
 
         return(
             <div className="search-menu">
@@ -34,7 +46,15 @@ class Search extends React.Component {
                         display: this.state.search === "" ? 'none' : 'block'
                     }}>
 
-                {user.filter(user => user.first_name.toUpperCase().startsWith(this.state.search.toUpperCase()) || user.last_name.toUpperCase().startsWith(this.state.search.toUpperCase())).map(result => <li>{result.first_name} {result.last_name}</li>)}
+                    {users.filter(user => user.first_name.toUpperCase().startsWith(this.state.search.trim().toUpperCase()) || 
+                    user.last_name.toUpperCase().startsWith(this.state.search.trim().toUpperCase()) || 
+                    (user.first_name + " " + user.last_name).toUpperCase().startsWith(this.state.search.trim().toUpperCase()))
+                        .map(result => <li>
+                            <NavLink className="search-link"
+                                to={`/users/${result.id}`}>
+                                <span>{`${result.first_name} ${result.last_name}`}</span>
+                            </NavLink>
+                        </li>)}
                 </ul>
             </div>
         )
