@@ -8,11 +8,12 @@ class NavBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.logout = this.logout.bind(this)
         this.state = {
-            showRequests: false
-        }
-        
+            showRequests: false,
+            searchWord: ""
+        }     
+        this.logout = this.logout.bind(this)
+        this.handleSearch = this.handleSearch.bind(this)
     }
 
     componentDidMount(){
@@ -31,6 +32,11 @@ class NavBar extends React.Component {
 
     logout() {
         this.props.logout();
+    }
+
+    handleSearch(e) {
+        e.preventDefault();
+        this.setState({ searchWord: e.currentTarget.value })
     }
 
     toggleRequest(e) {
@@ -59,7 +65,7 @@ class NavBar extends React.Component {
                     </NavLink>
                 </div>
                 <div className="search-bar">
-                    <input type="text" placeholder="Search.."></input>
+                    <input type="text" placeholder="Search.." value={this.state.search} onChange={this.handleSearch}></input>
                     <button type="submit"><i>🔍</i></button>
                 </div>
                 <div >

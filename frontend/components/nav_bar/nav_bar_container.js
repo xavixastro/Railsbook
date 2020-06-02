@@ -6,8 +6,7 @@ import { logout, fetchUser, fetchUsers } from '../../actions/session_actions'
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
-    profile: state.entities.profiles[state.session.id], 
-    
+    profile: state.entities.profiles[state.session.id]
 })
 
 const mapDispatchToProps = dispatch => ({
