@@ -19,6 +19,15 @@ class Api::PostsController < ApplicationController
         render :show
     end
 
+    def delete
+        @post = Post.find(params[:id])
+        if @post.destroy
+            render :show
+        else
+            render json: ["Invalid action"], status: 404 #Unprocessable Entity
+        end 
+    end
+
     private
     def post_params
         params.require(:post).permit(:author_id, :profile_id, :content)
