@@ -18,6 +18,7 @@ const postsReducer = (state = {}, action) => {
             return nextState;
         case REMOVE_POST:
             delete nextState[action.post.id];
+            debugger
             return nextState;
         default:
             return state;
