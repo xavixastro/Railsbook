@@ -3,6 +3,7 @@ import * as PostApiUtil from '../util/posts_api_util';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_POST_DETAIL = 'RECEIVE_POST_DETAIL';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const REMOVE_POST = 'REMOVE_POST';
 
 
 const receivePost = (post) => ({
@@ -24,6 +25,13 @@ const receivePostDetail = (payload) => {
     }
 };
 
+const removePost = (post) => {
+    return {
+        type: REMOVE_POST,
+        post
+    }
+}
+
 
 export const requestPosts = () => dispatch => {
     return PostApiUtil.fetchPosts() 
@@ -41,3 +49,8 @@ export const createPost = post => dispatch => {
     return PostApiUtil.createPost(post)
         .then(post => dispatch(receivePost(post)))
 };
+
+export const deletePost = (postId) => dispatch => {
+    return PostApiUtil.deletePost(postId)
+    .then(post => dispatch(removePost(post)))
+}
