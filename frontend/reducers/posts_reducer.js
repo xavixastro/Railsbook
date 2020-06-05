@@ -1,4 +1,4 @@
-import { RECEIVE_POST, RECEIVE_POSTS, RECEIVE_POST_DETAIL } from '../actions/posts_actions';
+import { RECEIVE_POST, RECEIVE_POSTS, RECEIVE_POST_DETAIL, REMOVE_POST } from '../actions/posts_actions';
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const postsReducer = (state = {}, action) => {
@@ -15,6 +15,9 @@ const postsReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_COMMENT:
             nextState[action.comment.post_id].comment_ids.push(action.comment.id);
+            return nextState;
+        case REMOVE_POST:
+            delete nextState[action.post.id];
             return nextState;
         default:
             return state;
