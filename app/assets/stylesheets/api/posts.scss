@@ -97,6 +97,7 @@ input[disabled=disabled], input:disabled {
 }
 
 .post-index-item {
+    position: relative;
     display: block;
     width: 100%;
     min-height: 185px;
@@ -142,6 +143,13 @@ input[disabled=disabled], input:disabled {
 
 .post-header-arrow {
     color: #60666F;
+}
+
+.post-header-delete {
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 5px;
 }
 
 .post-body {

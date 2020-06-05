@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { withRouter } from "react-router";
-import { requestPosts } from '../../actions/posts_actions';
+import { requestPosts, deletePost } from '../../actions/posts_actions';
 import { requestComments } from '../../actions/comment_actions';
 import { selectPostsByProfile } from '../../reducers/selectors';
 
@@ -16,10 +16,14 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 
-const mapDispatchToProps = dispatch => ({
-    requestPosts: () => dispatch(requestPosts()),
-    requestComments: () => dispatch(requestComments())
-});
+const mapDispatchToProps = dispatch => {
+    debugger
+    return{
+        requestPosts: () => dispatch(requestPosts()),
+        requestComments: () => dispatch(requestComments()),
+        deletePost: (postId) => dispatch(deletePost(postId))
+    };
+}
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));

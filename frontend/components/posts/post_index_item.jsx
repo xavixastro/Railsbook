@@ -13,10 +13,15 @@ class PostIndexItem extends React.Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleClick() {
         this.setState({ detail: !this.state.detail });
+    }
+
+    handleDelete() {
+        this.props.deletePost(this.props.post.id)
     }
 
     render() {
@@ -41,6 +46,7 @@ class PostIndexItem extends React.Component {
 
         return (
             <div className="post-index-item">
+                <button className="post-header-delete" onClick={this.handleDelete}>Delete</button>
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>
