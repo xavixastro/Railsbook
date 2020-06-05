@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE, RECEIVE_USERS } from '../actions/session_actions';
 import { RECEIVE_PROFILE_PHOTO } from '../actions/profile_actions';
-import { RECEIVE_POST } from '../actions/posts_actions';
+import { RECEIVE_POST, REMOVE_POST } from '../actions/posts_actions';
 
 
 const profilesReducer = (state = {}, action) => {
@@ -19,8 +19,13 @@ const profilesReducer = (state = {}, action) => {
             nextState[action.profile.id] = action.profile;
             return nextState;
         case RECEIVE_POST:
+            // debugger
             nextState[action.post.profile_id].post_ids.push(action.post.id);
             return nextState;
+        // case REMOVE_POST:
+        //     // debugger
+        //     // nextState = nextState[action.post.profile_id].post_ids.filter(id => id === action.post.id);
+        //     return nextState;
         default:
             return state;
     }

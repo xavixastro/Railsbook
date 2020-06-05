@@ -17,8 +17,7 @@ const postsReducer = (state = {}, action) => {
             nextState[action.comment.post_id].comment_ids.push(action.comment.id);
             return nextState;
         case REMOVE_POST:
-            delete nextState[action.post.id];
-            debugger
+            delete nextState[action.post.id]
             return nextState;
         default:
             return state;
