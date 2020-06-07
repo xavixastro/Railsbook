@@ -46,7 +46,7 @@ class PostIndexItem extends React.Component {
 
         return (
             <div className="post-index-item">
-                {/* <button className="post-header-delete" onClick={this.handleDelete}><img src={window.deleteURL}></img></button> */}
+                {post.profile_id === }
                 <img className="post-header-delete" onClick={this.handleDelete} src={window.deleteURL}></img>
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
