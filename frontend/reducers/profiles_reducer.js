@@ -22,10 +22,10 @@ const profilesReducer = (state = {}, action) => {
             // debugger
             nextState[action.post.profile_id].post_ids.push(action.post.id);
             return nextState;
-        // case REMOVE_POST:
-        //     // debugger
-        //     // nextState = nextState[action.post.profile_id].post_ids.filter(id => id === action.post.id);
-        //     return nextState;
+        case REMOVE_POST:
+            // debugger
+            nextState[action.post.profile_id].post_ids = nextState[action.post.profile_id].post_ids.filter(id => id !== action.post.id);
+            return nextState;
         default:
             return state;
     }

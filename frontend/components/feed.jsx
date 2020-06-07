@@ -27,7 +27,7 @@ class Feed extends React.Component {
 
         return (
             <div className="feed-main">
-                <div><SideBar></SideBar></div>
+                {/* <div><SideBar></SideBar></div> */}
                 <div className="profile-post-form">
                     <FeedPostFormContainer />
                 </div>
