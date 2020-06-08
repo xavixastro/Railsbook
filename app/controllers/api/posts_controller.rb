@@ -28,6 +28,15 @@ class Api::PostsController < ApplicationController
         end 
     end
 
+    def update
+        @post = Post.find(params[:id])
+        if @post.update(post_params)
+            render :info
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
+    end
+
     private
     def post_params
         params.require(:post).permit(:author_id, :profile_id, :content)

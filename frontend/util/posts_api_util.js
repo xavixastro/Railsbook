@@ -26,3 +26,9 @@ export const deletePost = (postId) => {
         method: 'DELETE'
     });
 }
+
+export const patchPost = (post) => {
+    return $.ajax({
+        url: 
+    })
+}
