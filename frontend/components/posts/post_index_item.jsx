@@ -15,12 +15,18 @@ class PostIndexItem extends React.Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.toggleUpdate = this.toggleUpdate.bind(this)
     }
 
     handleClick() {
         this.setState({ detail: !this.state.detail });
+    }
+
+    handleChange(e) {
+        this.setState({content: e.target.value})
     }
 
     handleDelete() {
@@ -28,11 +34,11 @@ class PostIndexItem extends React.Component {
     }
 
     toggleUpdate() {
-        this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true })
+        this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true, content: this.props.post.content })
     }
 
     handleUpdate() {
-        // this.props.updatePost()
+        this.props.updatePost({ id: this.props.post.id, content: this.state.content }).then(this.setState({ edit: false }))
     }
 
     render() {
@@ -66,7 +72,7 @@ class PostIndexItem extends React.Component {
                         <div className="post-header-date">{new Date(post.created_at).toLocaleDateString('en-EN', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                     </div>
                 </div>
-                {this.state.edit ? <input type="text"></input> : <p className="post-body">{post.content}</p>}
+                {this.state.edit ? <div><input className="post-body" type="text" onChange={this.handleChange} value={this.state.content}></input><button onClick={this.handleUpdate}>Confirm</button><button onClick={this.toggleUpdate}>Cancel</button></div>  : <p className="post-body">{post.content}</p>}
                 <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments" }</label>
                 <CommentFormContainer postId={post.id}/>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
