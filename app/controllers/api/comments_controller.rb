@@ -20,6 +20,15 @@ class Api::CommentsController < ApplicationController
         render :info
     end
 
+    def destroy
+        @comment = Comment.find(params[:id])
+        if @comment.destroy
+            render :info
+        else
+            render json: @comments.errors.full_messages, status: 422
+        end
+    end
+
     private
     def comment_params
         params.require(:comment).permit(:user_id, :post_id, :content)
