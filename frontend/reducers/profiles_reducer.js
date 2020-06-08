@@ -20,7 +20,9 @@ const profilesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_POST:
             // debugger
-            nextState[action.post.profile_id].post_ids.push(action.post.id);
+            if (!nextState[action.post.profile_id].post_ids.includes(action.post.id)) {
+                nextState[action.post.profile_id].post_ids.push(action.post.id);
+            }
             return nextState;
         case REMOVE_POST:
             // debugger
