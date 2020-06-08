@@ -72,7 +72,7 @@ class PostIndexItem extends React.Component {
                         <div className="post-header-date">{new Date(post.created_at).toLocaleDateString('en-EN', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                     </div>
                 </div>
-                {this.state.edit ? <div><input className="post-body" type="text" onChange={this.handleChange} value={this.state.content}></input><button onClick={this.handleUpdate}>Confirm</button><button onClick={this.toggleUpdate}>Cancel</button></div>  : <p className="post-body">{post.content}</p>}
+                {this.state.edit ? <div className="post-edit"><textarea className="body-edit" type="text" onChange={this.handleChange} value={this.state.content}></textarea><button onClick={this.handleUpdate}>Confirm</button><button onClick={this.toggleUpdate}>Cancel</button></div>  : <p className="post-body">{post.content}</p>}
                 <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments" }</label>
                 <CommentFormContainer postId={post.id}/>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}

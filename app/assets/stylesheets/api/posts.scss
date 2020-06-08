@@ -183,11 +183,32 @@ input[disabled=disabled], input:disabled {
 .post-body {
     width: 90%;
     min-height: 100px;
-    margin: 0 auto;
+    margin: auto;
     margin-top: 10px;
     font-size: 24px;
     font-weight: 300;
     padding: 20px;
+}
+
+.post-edit {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.post-edit button {
+    display: block;
+    float: right;
+}
+
+.body-edit {
+    width: 445px;
+    min-height: 150px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 15px;
+    resize: none;
 }
 
 .post-comments-toggle {
