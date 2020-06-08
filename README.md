@@ -1,7 +1,11 @@
 # Railsbook
 
 Railsbook was inspired by Facebook, a social media network that allows users to 
-connect with friends, upload photos and share content with their friends. 
+connect with friends, upload photos and share content with their friends.
+
+<img src="https://github.com/xavixastro/Railsbook/blob/master/app/assets/demo/signup_page.png?raw=true" width="800" height="500" title="Railsbook">
+
+
 
 ## Demo
 
