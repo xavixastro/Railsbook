@@ -159,6 +159,22 @@ input[disabled=disabled], input:disabled {
     opacity: 1;
 }
 
+.post-header-update {
+    position:absolute;
+    top:0;
+    right:20px;
+    margin: 8px;
+    height: 15px;
+    width: 15px;
+    opacity: 0.4;
+}
+
+.post-header-update:hover {
+    opacity: 1;
+}
+
+
+
 .post-header-delete img {
     height: 15px;
     width: 15px;

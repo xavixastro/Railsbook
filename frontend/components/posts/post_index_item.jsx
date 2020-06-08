@@ -9,11 +9,14 @@ class PostIndexItem extends React.Component {
         super(props);
 
         this.state = {
-            detail: true
+            detail: true,
+            edit: false,
+            content: ""
         }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
 
     handleClick() {
@@ -22,6 +25,14 @@ class PostIndexItem extends React.Component {
 
     handleDelete() {
         this.props.deletePost(this.props.post.id)
+    }
+
+    toggleUpdate() {
+        this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true })
+    }
+
+    handleUpdate() {
+        // this.props.updatePost()
     }
 
     render() {
@@ -47,6 +58,7 @@ class PostIndexItem extends React.Component {
         return (
             <div className="post-index-item">
                 <img className="post-header-delete" onClick={this.handleDelete} src={window.deleteURL}></img>
+                <img className="post-header-update" onClick={this.toggleUpdate} src={window.createPostURL}></img>
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>
@@ -54,7 +66,7 @@ class PostIndexItem extends React.Component {
                         <div className="post-header-date">{new Date(post.created_at).toLocaleDateString('en-EN', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                     </div>
                 </div>
-                <p className="post-body">{post.content}</p>
+                {this.state.edit ? <input type="text"></input> : <p className="post-body">{post.content}</p>}
                 <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments" }</label>
                 <CommentFormContainer postId={post.id}/>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}

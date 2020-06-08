@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
             <div className="post-index">
                 <ul className="post-list">
                     {
-                        this.props.posts.reverse().map(post => <PostIndexItem post={post} key={post.id} profiles={this.props.profiles} users={this.props.users} deletePost={this.props.deletePost}/>)
+                        this.props.posts.reverse().map(post => <PostIndexItem post={post} key={post.id} profiles={this.props.profiles} users={this.props.users} deletePost={this.props.deletePost} updatePost={this.props.updatePost}/>)
                     }
                 </ul>
 
