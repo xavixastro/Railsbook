@@ -1,5 +1,5 @@
 import { RECEIVE_POST, RECEIVE_POSTS, RECEIVE_POST_DETAIL, REMOVE_POST } from '../actions/posts_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state); 
@@ -18,6 +18,9 @@ const postsReducer = (state = {}, action) => {
             return nextState;
         case REMOVE_POST:
             delete nextState[action.post.id]
+            return nextState;
+        case REMOVE_COMMENT:
+            nextState[action.comment.post_id].comment_ids = nextState[action.comment.post_id].comment_ids.filter(id => id !== action.comment.id);
             return nextState;
         default:
             return state;

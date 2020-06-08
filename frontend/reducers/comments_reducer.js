@@ -1,5 +1,5 @@
 import { RECEIVE_POST_DETAIL } from '../actions/posts_actions'
-import { RECEIVE_COMMENT, RECEIVE_COMMENTS } from '../actions/comment_actions'
+import { RECEIVE_COMMENT, RECEIVE_COMMENTS, REMOVE_COMMENT } from '../actions/comment_actions'
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -13,6 +13,9 @@ const commentsReducer = (state = {}, action) => {
             return Object.assign(nextState, action.comments)
         case RECEIVE_POST_DETAIL:
             return Object.assign(nextState, action.payload.comments);
+        case REMOVE_COMMENT:
+            delete nextState[action.comment.id]
+            return nextState;
         default:
             return state;
     }
