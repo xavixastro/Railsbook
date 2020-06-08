@@ -54,3 +54,8 @@ export const deletePost = (postId) => dispatch => {
     return PostApiUtil.deletePost(postId)
     .then(post => dispatch(removePost(post)))
 }
+
+export const updatePost = post => dispatch => {
+    return PostApiUtil.patchPost(post)
+    .then(post => dispatch(receivePost(post)))
+}

@@ -29,6 +29,8 @@ export const deletePost = (postId) => {
 
 export const patchPost = (post) => {
     return $.ajax({
-        url: 
+        url: `/api/posts/${post.id}`,
+        method: 'PATCH',
+        data: { post }
     })
 }
