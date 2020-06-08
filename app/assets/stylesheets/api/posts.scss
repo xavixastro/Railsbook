@@ -193,11 +193,16 @@ input[disabled=disabled], input:disabled {
 .post-edit {
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .post-edit button {
     display: block;
     float: right;
+    background-color: #4267B2;
+    color: white;
+    text-align: center;
+    margin-left: 5px;
 }
 
 .body-edit {
