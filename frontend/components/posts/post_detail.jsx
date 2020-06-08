@@ -4,8 +4,20 @@ import { NavLink } from 'react-router-dom';
 
 class PostDetail extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.handleDelete = this.handleDelete.bind(this)
+    }
+
     componentDidMount() {
         this.props.requestPost(this.props.post.id);
+    }
+
+    handleDelete(commentId){
+        // debugger
+        return () => {
+            this.props.deleteComment(commentId)
+        }
     }
 
     render() {
@@ -23,6 +35,8 @@ class PostDetail extends React.Component {
                                     <span><NavLink className="post-comment-link" to={`/users/${comment.user_id}`}>{users[comment.user_id].first_name} {users[comment.user_id].last_name}</NavLink> </span>
                                     <span>{comment.content}</span>
                                 </p>
+                                <img className="comment-delete" onClick={this.handleDelete(comment.id)} src={window.deleteURL}></img>
+
                             </div>
                         )
                     })}

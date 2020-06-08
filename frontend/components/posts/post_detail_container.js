@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PostDetail from './post_detail';
 import { selectCommentsByPost } from '../../reducers/selectors';
 import { requestPost } from '../../actions/posts_actions';
+import { deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        requestPost: (postId) => dispatch(requestPost(postId))
+        requestPost: (postId) => dispatch(requestPost(postId)),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId))
     }
 };
 
