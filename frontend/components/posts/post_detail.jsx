@@ -21,7 +21,7 @@ class PostDetail extends React.Component {
     }
 
     render() {
-        const { post, comments, profiles, users} = this.props;
+        const { post, comments, profiles, users, currentUser} = this.props;
         if (comments.length === 0) return null;
 
         return (
@@ -35,7 +35,7 @@ class PostDetail extends React.Component {
                                     <span><NavLink className="post-comment-link" to={`/users/${comment.user_id}`}>{users[comment.user_id].first_name} {users[comment.user_id].last_name}</NavLink> </span>
                                     <span>{comment.content}</span>
                                 </p>
-                                <img className="comment-delete" onClick={this.handleDelete(comment.id)} src={window.deleteURL}></img>
+                                {(currentUser.id === comment.user_id || currentUser.id === post.profile_id) ? <img className="comment-delete" onClick={this.handleDelete(comment.id)} src={window.deleteURL}></img> : "" }
 
                             </div>
                         )
