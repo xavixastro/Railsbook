@@ -10,7 +10,8 @@ import { selectPostsByProfile } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => ({
     posts: Object.values(state.entities.posts),
     profiles: state.entities.profiles,
-    users: state.entities.users
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id]
 });
 
 

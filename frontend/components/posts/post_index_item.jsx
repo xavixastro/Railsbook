@@ -43,7 +43,7 @@ class PostIndexItem extends React.Component {
 
     render() {
         // if (post === undefined) return null;
-        const { post, users, profiles } = this.props;
+        const { post, users, profiles, currentUser } = this.props;
         const profileUser = users[post.profile_id];
         const postAuthor = users[post.author_id];
         let postHeaderInfo;
@@ -63,8 +63,11 @@ class PostIndexItem extends React.Component {
 
         return (
             <div className="post-index-item">
-                <img className="post-header-delete" onClick={this.handleDelete} src={window.deleteURL}></img>
-                <img className="post-header-update" onClick={this.toggleUpdate} src={window.createPostURL}></img>
+                {(currentUser === profileUser || currentUser === postAuthor) ? 
+                <>
+                    <img className="post-header-delete" onClick={this.handleDelete} src={window.deleteURL}></img>
+                    <img className="post-header-update" onClick={this.toggleUpdate} src={window.createPostURL}></img> 
+                </>: ""}
                 <div className="post-header">
                     <img className= "post-form-avatar" src={profiles[post.author_id].profilePhotoUrl}/>
                     <div>
