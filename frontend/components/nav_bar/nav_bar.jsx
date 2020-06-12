@@ -72,8 +72,8 @@ class NavBar extends React.Component {
                         <span>{currentUser.first_name}</span>
                     </NavLink>
                 </div>
-                <div className="navbar-home">
-                    <NavLink 
+                <div >
+                    <NavLink className="navbar-home"
                         to={`/feed`}
                         style={{
                             textDecoration: 'none',

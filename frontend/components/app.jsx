@@ -9,7 +9,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import NotFound from './not_found';
 
 const App = () => (
-    <div>
+    <div className="main-container">
         <NavBarContainer/>
         <Switch>
             <Route exact path="/">

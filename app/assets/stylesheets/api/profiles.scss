@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.main-container {
+    height: auto;
+}
 
 .navbar {
     display: flex;
@@ -112,16 +114,20 @@
 }
 
 
-//Profile
+//Profile 
 
 .profile-main {
+    width: 100%;
     background-color: #E9EBEE;
-    min-height: 3000px;
+    // min-height: 500px;
 }
 
 .profile-container {
     width: 900px;
     margin: 0 auto;
+    overflow:auto; 
+    // background-color: #E9EBEE;
+    // min-height: 3000px;
 }
 
 .profile-left {
@@ -132,6 +138,7 @@
 .profile-right {
     width: 60%;
     float: right;
+    padding-bottom: 50px;
 }
 
 .profile-top {
@@ -186,7 +193,6 @@
     left: 6px;
     border-bottom-right-radius: 100px;
     border-bottom-left-radius: 100px;
-    // border: 1px solid red;
 }
 
 
@@ -254,14 +260,9 @@
 }
 
 .profile-post-index {
-    // border: 2px solid #DDDFE2;
     width: 530px;
-    min-height: 1300px;
-    // display: inline-flex;
-    // float: right;
-    // vertical-align: top;
+    min-height: 1000px;
     margin: 0 auto;
-
     display: block;
 
 }
