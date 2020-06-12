@@ -13,7 +13,8 @@ class Intro extends React.Component {
             hometown: ""
         }
         this.toggleUpdate = this.toggleUpdate.bind(this),
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this), 
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
 
     toggleUpdate() {
@@ -32,6 +33,17 @@ class Intro extends React.Component {
         return (e) => {
             this.setState({ [field]: e.target.value })
         }
+    }
+
+    handleUpdate() {
+        this.props.updateProfileInfo({ 
+            id: this.props.profile.id, 
+            about: this.state.about, 
+            workplace: this.state.workplace, 
+            education: this.state.education, 
+            current_city: this.state.current_city, 
+            hometown: this.state.hometown })
+            .then(this.setState({ edit: false }))
     }
 
     render(){
@@ -53,6 +65,7 @@ class Intro extends React.Component {
                         <li><img src={window.introFromURL} /><span>From {this.state.edit ? <input type="text" onChange={this.handleChange("hometown")} value={this.state.hometown}/> : <a>{profile.hometown || 'San Francisco, California'}</a>}</span></li>
                         <li><img src={window.introJoinURL} /><span>Joined {new Date(profile.created_at).toLocaleDateString('en-EN', { year: 'numeric', month: 'long' })}</span></li>
                     </ul>
+                    {this.state.edit ? <div><button onClick={this.handleUpdate}>Confirm</button> <button onClick={this.toggleUpdate}>Cancel</button></div>: ""}
                 </div>
         )
     }

@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_PROFILE, RECEIVE_USERS } from '../actions/session_actions';
-import { RECEIVE_PROFILE_PHOTO } from '../actions/profile_actions';
+import { RECEIVE_PROFILE_PHOTO, RECEIVE_PROFILE_INFO } from '../actions/profile_actions';
 import { RECEIVE_POST, REMOVE_POST } from '../actions/posts_actions';
 
 
@@ -16,6 +16,9 @@ const profilesReducer = (state = {}, action) => {
             nextState[action.payload.profile.id] = action.payload.profile;
             return nextState;
         case RECEIVE_PROFILE_PHOTO:
+            nextState[action.profile.id] = action.profile;
+            return nextState;
+        case RECEIVE_PROFILE_INFO:
             nextState[action.profile.id] = action.profile;
             return nextState;
         case RECEIVE_POST:

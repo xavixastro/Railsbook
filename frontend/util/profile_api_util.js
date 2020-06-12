@@ -20,6 +20,6 @@ export const updateProfileInfo = (profile) => {
     return $.ajax({
         url: `/api/profiles/${profile.id}`,
         method: 'PATCH',
-        data: profile
+        data: { profile }
     })
 }
