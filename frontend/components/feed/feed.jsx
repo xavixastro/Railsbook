@@ -1,8 +1,8 @@
 
 import React from 'react';
-import FeedPostIndexContainer from '../components/posts/feed_post_index_container';
-import FeedPostFormContainer from '../components/posts/feed_post_form_container';
-import SideBar from './side_bar/side_bar';
+import FeedPostIndexContainer from '../posts/feed_post_index_container';
+import FeedPostFormContainer from '../posts/feed_post_form_container';
+import SideBar from '../side_bar/side_bar';
 
 class Feed extends React.Component {
 

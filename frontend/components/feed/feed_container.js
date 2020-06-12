@@ -1,8 +1,8 @@
 import Feed from './feed';
 import { connect } from 'react-redux';
-import { fetchUsers } from '../actions/session_actions';
-import { requestPosts } from '../actions/posts_actions';
-import { requestComments} from '../actions/comment_actions';
+import { fetchUsers } from '../../actions/session_actions';
+import { requestPosts } from '../../actions/posts_actions';
+import { requestComments} from '../../actions/comment_actions';
 
 
 
