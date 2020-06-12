@@ -48,7 +48,7 @@ class Intro extends React.Component {
 
     render(){
     
-        const {profile} = this.props;
+        const {profile, currentUser} = this.props;
 
         return (
                 <div>
@@ -56,16 +56,17 @@ class Intro extends React.Component {
                         <img src={window.introURL} />
                         <h3>Intro</h3>
                     </div>
-                    <img className="intro-edit" onClick={this.toggleUpdate} src={window.createPostURL}></img>
-                    {this.state.edit ? <textarea className="intro-about" onChange={this.handleChange("about")} value={this.state.about}/> : <p className="intro-about">{profile.about || 'About me'}</p> }
+                    {currentUser.id === profile.id ? 
+                    <img className="intro-edit" onClick={this.toggleUpdate} src={window.createPostURL}></img> : "" }
+                    {this.state.edit ? <textarea className="intro-about-edit" onChange={this.handleChange("about")} value={this.state.about}/> : <p className="intro-about">{profile.about || 'About me'}</p> }
                     <ul className="intro-items">
-                        <li><img src={window.introWorkURL} /><span>Works at {this.state.edit ? <input type="text" onChange={this.handleChange("workplace")} value={this.state.workplace}/> : <a>{profile.workplace || 'Railsbook'}</a>}</span></li>
-                        <li><img src={window.introStudyURL} /><span>Studied at {this.state.edit ? <input type="text" onChange={this.handleChange("education")} value={this.state.education}/> : <a>{profile.education || 'App Academy'}</a>}</span></li>
-                        <li><img src={window.introCityURL} /><span>Lives in {this.state.edit ? <input type="text" onChange={this.handleChange("current_city")} value={this.state.current_city}/> : <a>{profile.current_city || 'San Francisco, California'}</a>}</span></li>
-                        <li><img src={window.introFromURL} /><span>From {this.state.edit ? <input type="text" onChange={this.handleChange("hometown")} value={this.state.hometown}/> : <a>{profile.hometown || 'San Francisco, California'}</a>}</span></li>
+                        <li><img src={window.introWorkURL} /><span>Works at {this.state.edit ? <input className="intro-input" type="text" onChange={this.handleChange("workplace")} value={this.state.workplace}/> : <a>{profile.workplace || 'Railsbook'}</a>}</span></li>
+                        <li><img src={window.introStudyURL} /><span>Studied at {this.state.edit ? <input className="intro-input"type="text" onChange={this.handleChange("education")} value={this.state.education}/> : <a>{profile.education || 'App Academy'}</a>}</span></li>
+                        <li><img src={window.introCityURL} /><span>Lives in {this.state.edit ? <input className="intro-input"type="text" onChange={this.handleChange("current_city")} value={this.state.current_city}/> : <a>{profile.current_city || 'San Francisco, California'}</a>}</span></li>
+                        <li><img src={window.introFromURL} /><span>From {this.state.edit ? <input className="intro-input"type="text" onChange={this.handleChange("hometown")} value={this.state.hometown}/> : <a>{profile.hometown || 'San Francisco, California'}</a>}</span></li>
                         <li><img src={window.introJoinURL} /><span>Joined {new Date(profile.created_at).toLocaleDateString('en-EN', { year: 'numeric', month: 'long' })}</span></li>
                     </ul>
-                    {this.state.edit ? <div><button onClick={this.handleUpdate}>Confirm</button> <button onClick={this.toggleUpdate}>Cancel</button></div>: ""}
+                    {this.state.edit ? <div className="intro-edit-actions"><button onClick={this.handleUpdate}>Confirm</button> <button onClick={this.toggleUpdate}>Cancel</button></div>: ""}
                 </div>
         )
     }

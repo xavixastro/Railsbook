@@ -6,7 +6,8 @@ import { updateProfileInfo} from "../../actions/profile_actions";
 
 
 const mapStateToProps = (state, ownProps) => ({
-    profile: state.entities.profiles[ownProps.match.params.id]
+    profile: state.entities.profiles[ownProps.match.params.id],
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mapDispatchToProps = (dispatch) => ({

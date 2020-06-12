@@ -38,7 +38,7 @@ class PostForm extends React.Component {
 
         return (
             <form onSubmit={this.handleSubmit} className="post-form">
-                <label className="post-form-header"><img src={window.createPostURL}></img><span>Create Post</span></label>
+                <label className="post-form-header"><img src={window.newPostURL}></img><span>Create Post</span></label>
                 <div className="post-form-body">
                     <img className="post-form-avatar" src={this.props.profilePhotoUrl} />
                     <textarea
