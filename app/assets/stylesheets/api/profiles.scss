@@ -227,7 +227,7 @@
     min-height: 200px;
     margin-bottom: 15px;
     background-color: white;
-
+    position: relative;
 }
 
 .profile-post-form {
@@ -336,6 +336,21 @@
     cursor: pointer;
     text-decoration: none;
 }
+
+.intro-edit{
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 8px;
+    height: 15px;
+    width: 15px;
+    opacity: 0.4;
+}
+
+.intro-edit:hover {
+    opacity: 1;
+}
+
 
 //Search bar
 
