@@ -79,7 +79,7 @@
 
 .navbar-home:hover {
     background-color: #3C5CA2
-}
+} 
 
 .navbar-logout {
     background-color: #ffffff;
@@ -88,6 +88,15 @@
     color: #000000;
     height: 25px;
     border: none;
+}
+
+.navbar-help img {
+    object-fit: contain;
+}
+
+.navbar-help:hover {
+    background-color: #3C5CA2;
+    cursor: pointer;
 }
 
 .navbar-logout span {

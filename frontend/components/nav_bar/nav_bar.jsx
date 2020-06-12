@@ -93,8 +93,10 @@ class NavBar extends React.Component {
                         {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId = {friendId}/></li>)}
                     </ul>
                 </div>
-                <div>
-                    <img src={window.navHelpURL} />
+                <div className="navbar-help">
+                    <a href="https://github.com/xavixastro/Railsbook" target="_blank">
+                        <img src={window.navHelpURL} />
+                    </a>
                 </div>
                 <button className="navbar-logout" onClick={this.logout}><span>Log Out</span></button>
             </div>
