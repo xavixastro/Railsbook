@@ -10,7 +10,7 @@
 }
 
 .friend-container img {
-    width: inherit;
+    width: 103px;
     height: 103px;
     object-fit: cover;
     display: inline-flex;
@@ -19,6 +19,7 @@
 .friend-link {
     text-decoration: none;
     color: #385898;
+    text-transform: capitalize;
 }
 
 .friend-link:hover {

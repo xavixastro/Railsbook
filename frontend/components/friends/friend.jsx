@@ -12,10 +12,10 @@ class Friend extends React.Component {
 
         return (
             <div className="friend-container">
-                <img src={profile.profilePhotoUrl} />
                 <div>
                     <NavLink className="friend-link"
                         to={`/users/${user.id}`}>
+                        <img src={profile.profilePhotoUrl} />
                         {`${user.first_name} ${user.last_name}`}
                     </NavLink>
                 </div>
