@@ -50,20 +50,20 @@ class RequestButton extends React.Component {
 
         //Already friends
         if (currentUser.friend_ids.includes(profileUser.id)) {
-            button = <button onClick={this.remove_friend}>Remove Friend</button>
+            button = <button className="friends-remove" onClick={this.remove_friend}>Remove Friend</button>
         //Friend request pending to be accepted by current user
         } else if (currentUser.received_friend_ids.includes(profileUser.id)) {
-            button = <button onClick={this.accept_request}>Accept Request</button>
+            button = <button className="friends-add" onClick={this.accept_request}>Accept Request</button>
         //Friend request pending to be accepted by profile user
         } else if (currentUser.sent_friend_ids.includes(profileUser.id)) {
-            button = <button onClick={this.cancel_request}>Requested</button>
+            button = <button className="friends-remove" onClick={this.cancel_request}>Cancel Request</button>
         //Not friends
         } else {
-            button = <button onClick={this.send_request}>Add Friend</button>
+            button = <button className="friends-add" onClick={this.send_request}>Add Friend</button>
         }
 
         return(
-            <div>
+            <div className="friends-btn">
                 {button}
             </div>
         )

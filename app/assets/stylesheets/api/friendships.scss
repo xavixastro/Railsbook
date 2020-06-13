@@ -157,5 +157,36 @@
 
 
 
+//Friending button
+
+
+.friends-btn button{
+    height: 30px;
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    background-color: #FEFEFE;
+    padding-left: 28px;
+    outline:0;
+}
+
+.friends-add {
+    background: image-url('add-friend.png') left center no-repeat;
+    background-size: 20px;
+    background-position: 4px;
+}
+
+.friends-remove {
+    background: image-url('remove-friend.png') left center no-repeat;
+    background-size: 20px;
+    background-position: 4px;
+}
+
+.friends-btn button:hover{
+    cursor: pointer;
+    background-color: #DEDFE2;
+}
+
+
+
 
 
