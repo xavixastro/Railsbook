@@ -4,6 +4,7 @@
 
 //Post Form
 
+
 .post-form {
     height: 154px;
     // width: 100%;
@@ -61,7 +62,7 @@
     outline: none;
     display: block;
     border: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 18px;
 
 }
@@ -187,7 +188,8 @@ input[disabled=disabled], input:disabled {
     min-height: 75px;
     margin: auto;
     margin-top: 10px;
-    font-size: 24px;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
     font-weight: 300;
     padding: 20px;
 }

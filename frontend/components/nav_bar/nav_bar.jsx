@@ -59,9 +59,12 @@ class NavBar extends React.Component {
                     </NavLink>
                 </div>
 
-                <SearchContainer/>
+                <div>
+                    <SearchContainer/>
+                </div>
 
-                <div >
+                <div className="navbar-links">        
+
                     <NavLink className="navbar-avatar"
                         to={`/users/${currentUser.id}`}
                         style={{
@@ -71,8 +74,7 @@ class NavBar extends React.Component {
                         <img src={this.props.profile.profilePhotoUrl } />
                         <span>{currentUser.first_name}</span>
                     </NavLink>
-                </div>
-                <div >
+
                     <NavLink className="navbar-home"
                         to={`/feed`}
                         style={{
@@ -81,24 +83,25 @@ class NavBar extends React.Component {
                         }}>
                         <span>Home</span>
                     </NavLink>
+
+                    <div className="dropdown-friends" onClick={this.toggleRequest.bind(this)}>
+                        <img className="dropdown-image" src={window.navRequestsURL} />
+                        <ul className="dropdown-requests"
+                            style={{
+                                display: this.state.showRequests ? 'block' : 'none'
+                            }}>
+                            
+                            {currentUser.received_friend_ids.length === 0 ? <li>No Requests</li> : <li>Friend Requests</li>   } 
+                            {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId = {friendId}/></li>)}
+                        </ul>
+                    </div>
+                    <div className="navbar-help">
+                        <a href="https://github.com/xavixastro/Railsbook" target="_blank">
+                            <img src={window.navHelpURL} />
+                        </a>
+                    </div>
+                    <button className="navbar-logout" onClick={this.logout}><span>Log Out</span></button>
                 </div>
-                <div className="dropdown-friends" onClick={this.toggleRequest.bind(this)}>
-                    <img className="dropdown-image" src={window.navRequestsURL} />
-                    <ul className="dropdown-requests"
-                        style={{
-                            display: this.state.showRequests ? 'block' : 'none'
-                        }}>
-                        
-                        {currentUser.received_friend_ids.length === 0 ? <li>No Requests</li> : <li>Friend Requests</li>   } 
-                        {currentUser.received_friend_ids.map((friendId) => <li><FriendRequestContainer friendId = {friendId}/></li>)}
-                    </ul>
-                </div>
-                <div className="navbar-help">
-                    <a href="https://github.com/xavixastro/Railsbook" target="_blank">
-                        <img src={window.navHelpURL} />
-                    </a>
-                </div>
-                <button className="navbar-logout" onClick={this.logout}><span>Log Out</span></button>
             </div>
         )
     }
