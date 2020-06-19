@@ -31,8 +31,8 @@ class LikeForm extends React.Component {
         // debugger
         return (
                 <div className="like-body">
-                    <div>{this.props.post.like_ids.length} people like this</div>
-                    {this.state.liked ? <button onClick={this.handleDislike}>Dislike</button> : <button onClick={this.handleLike}>Like</button> }
+                    {this.state.liked ? <div>You and {this.props.post.like_ids.length - 1} others like this</div> : <div>{this.props.post.like_ids.length} people like this</div> }
+                {this.state.liked ? <img className="like-btn" src={window.dislikeURL} onClick={this.handleDislike}></img> : <img className="like-btn" src={window.likeURL} onClick={this.handleLike}></img> }
                 </div>
         )
     }
