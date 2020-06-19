@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { withRouter } from "react-router";
 import { requestPosts, deletePost, updatePost } from '../../actions/posts_actions';
+import { requestLikes} from '../../actions/like_actions';
 import { requestComments } from '../../actions/comment_actions';
 import { selectPostsByProfile } from '../../reducers/selectors';
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = dispatch => {
     return{
         requestPosts: () => dispatch(requestPosts()),
         requestComments: () => dispatch(requestComments()),
+        requestLikes: () => dispatch(requestLikes()),
         deletePost: (postId) => dispatch(deletePost(postId)),
         updatePost: (post) => dispatch(updatePost(post))
     };

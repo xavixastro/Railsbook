@@ -11,6 +11,7 @@ class Feed extends React.Component {
         this.props.fetchUsers();
         this.props.fetchPosts();
         this.props.fetchComments();
+        this.props.fetchLikes();
     }
 
     constructor(props) {

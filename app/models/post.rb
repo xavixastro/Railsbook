@@ -31,5 +31,9 @@ class Post < ApplicationRecord
         class_name: :Like, 
         dependent: :destroy
 
+    has_many :likers,
+        through: :likes, 
+        source: :user
+
     
 end

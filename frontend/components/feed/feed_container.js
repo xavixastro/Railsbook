@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/session_actions';
 import { requestPosts } from '../../actions/posts_actions';
 import { requestComments} from '../../actions/comment_actions';
+import { requestLikes} from '../../actions/like_actions';
 
 
 
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchUsers: () => dispatch(fetchUsers()),
         fetchPosts: () => dispatch(requestPosts()),
-        fetchComments: () => dispatch(requestComments())
+        fetchComments: () => dispatch(requestComments()),
+        fetchLikes: () => dispatch(requestLikes()),
     });
 };
 
