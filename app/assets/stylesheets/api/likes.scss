@@ -8,9 +8,21 @@
     justify-content: space-between;
     width: 92%;
     margin: 0 auto;
+    padding-bottom: 5px;
 }
 
-.like-btn{
+.like-btn {
     width: 155px;
     height: 30px;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+.like-btn:hover {
+    filter: invert(10%);
+}
+
+.like-label {
+    font-family: 'PT Serif', serif;
+    font-size: 14px;
 }

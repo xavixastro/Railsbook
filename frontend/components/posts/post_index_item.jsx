@@ -83,7 +83,7 @@ class PostIndexItem extends React.Component {
 
                 <LikeFormContainer postId={post.id}/>
 
-                <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments" }</label>
+                {!post.comment_ids.length ? "" : <label className="post-comments-toggle" onClick={this.handleClick}>{this.state.detail ? "Hide Comments" : "Show Comments"}</label>}
                 <CommentFormContainer postId={post.id}/>
                 {this.state.detail ? <PostDetailContainer postId={post.id} /> : ''}
             </div>

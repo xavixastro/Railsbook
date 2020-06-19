@@ -33,7 +33,7 @@ class PostDetail extends React.Component {
                                 <img className="comment-avatar" src={profiles[comment.user_id].profilePhotoUrl} />
                                 <p className="comment-body">
                                     <span><NavLink className="post-comment-link" to={`/users/${comment.user_id}`}>{users[comment.user_id].first_name} {users[comment.user_id].last_name}</NavLink> </span>
-                                    <span>{comment.content}</span>
+                                    <span className="comment-content">{comment.content}</span>
                                 </p>
                                 {(currentUser.id === comment.user_id || currentUser.id === post.profile_id) ? <img className="comment-delete" onClick={this.handleDelete(comment.id)} src={window.deleteURL}></img> : "" }
 
