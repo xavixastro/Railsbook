@@ -25,14 +25,26 @@ class LikeForm extends React.Component {
 
     render() {
         let label, button;
+        let amount = this.props.likes.length;
+        let liked = this.props.likes.map(like => like.user_id).includes(this.props.userId)
 
-        if (this.props.likes.map(like => like.user_id).includes(this.props.userId)) {
-            label = <div className="like-label">You and {(this.props.post.like_ids.length - 1)} others like this</div>
+        if (amount === 0) {
+            label = <div></div>
+            button = <img className="like-btn" src={window.likeURL} onClick={this.handleLike}></img>
+        } else if (amount === 1 && liked) {
+            label = <div className="like-label">You like this</div>
+            button = <img className="like-btn" src={window.dislikeURL} onClick={this.handleDislike}></img> 
+        } else if (amount === 1 && !liked) {
+            label = <div className="like-label">1 person likes this</div>
+            button = <img className="like-btn" src={window.likeURL} onClick={this.handleLike}></img>
+        } else if (liked) {
+            label = <div>You and {this.props.post.like_ids.length - 1} others like this</div>
             button = <img className="like-btn" src={window.dislikeURL} onClick={this.handleDislike}></img> 
         } else {
             label = <div>{this.props.post.like_ids.length} people like this</div>
             button = <img className="like-btn" src={window.likeURL} onClick={this.handleLike}></img>
         }
+
         // debugger
         return (
                 <div className="like-body">
