@@ -21,9 +21,9 @@ class Feed extends React.Component {
     render() {
 
         //checking for the first post
-        // if (this.props.profiles[1] === undefined) return null;
-        // if (this.props.posts[1] === undefined) return null;
-        // if (this.props.comments[1] === undefined) return null;
+        if (this.props.profiles[0] === undefined) return null;
+        if (this.props.posts[0] === undefined) return null;
+        if (this.props.comments[0] === undefined) return null;
 
 
         return (
